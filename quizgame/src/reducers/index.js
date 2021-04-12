@@ -33,6 +33,7 @@ const generalKnowledgeReducer = (resultGeneralQuestions = generalQuestions, acti
 
 }
 
+
 const geographyReducer = (resultGeography = geographyQuestions, action) => {
 
     switch (action.type) {
@@ -69,8 +70,53 @@ const celebritiesReducer = (resultCelebrities = celebritiesQuestions, action) =>
 
 }
 
+
+let historyQuestions = {
+    data: []
+}
+
+const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
+    switch (action.type) {
+        case "START":
+        generalQuestions = { data: [], status: "START" };
+        return { ...historyQuestions };
+        case "SUCCESS":
+        generalQuestions = { data: action.payload, status: "SUCCESS" };
+        return { ...historyQuestions };
+        case "FAILED":
+        generalQuestions = { data: [], status: "FAILED" };
+        return { ...historyQuestions };
+        default:
+        return resultHistoryQuestions;
+    }
+};
+
+let sportsQuestions = {
+    data: [],
+}
+
+const sportsReducer = (resultSportsQuestions = sportsQuestions, action) => {
+    switch (action.type) {
+        case "START":
+        generalQuestions = { data: [], status: "START" };
+        return { ...sportsQuestions };
+        case "SUCCESS":
+        generalQuestions = { data: action.payload, status: "SUCCESS" };
+        return { ...sportsQuestions };
+        case "FAILED":
+        generalQuestions = { data: [], status: "FAILED" };
+        return { ...sportsQuestions };
+        default:
+        return resultSportsQuestions;
+    }
+};
+
+
 export default combineReducers({
-    resultGeneralQuestions: generalKnowledgeReducer,
-    resultGeography: geographyReducer,
+    resultGeneralQuestions: generalKnowledgeReducer, 
+    resultHistoryQuestions: historyReducer, 
+    resultSportsQuestions: sportsReducer,
+     resultGeography: geographyReducer,
     resultCelebrities: celebritiesReducer
+
 })
