@@ -12,11 +12,7 @@ const GeneralKnowledge = (props) => {
     )
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         insert: () => dispatch(getDataGeneral())
-//     }
-// }
+
 
 const mapStateToProps = (state) => {
     return ({
