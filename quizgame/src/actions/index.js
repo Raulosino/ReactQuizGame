@@ -1,5 +1,5 @@
 
-import { getGeneralKnowledge, getCelebrities, getGeography, getHistory, getSports } from '../api;
+import { getGeneralKnowledge, getCelebrities, getGeography, getHistory, getSports } from '../api';
 
 export const getDataGeneral = () => {
   return (dispatch) => {
@@ -26,7 +26,8 @@ export const getDataGeneral = () => {
                 payload: error
             })
         })
-    }
+    })
+  }          
 }
 
 export const getDataGeography = () => {
