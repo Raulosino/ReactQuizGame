@@ -1,5 +1,5 @@
 
-const getGeneralKnowledge = () => {
+export const getGeneralKnowledge = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=50&category=9&difficulty=easy&type=multiple")
         .then((response) => {
@@ -7,7 +7,8 @@ const getGeneralKnowledge = () => {
             response
               .json()
               .then((data) => {
-                resolve(data);
+                resolve(data.results);
+                console.log(data)
               })
               .catch((error) => {
                 reject(error);
@@ -23,7 +24,7 @@ const getGeneralKnowledge = () => {
 };
 
 
-const getCelebrities = () => {
+export const getCelebrities = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=13&category=26&difficulty=easy")
         .then((response) => {
@@ -47,7 +48,7 @@ const getCelebrities = () => {
   };
 
 
-const getFilms = () => {
+  export const getFilms = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=50&category=11&difficulty=easy&type=multiple")
         .then((response) => {
@@ -71,7 +72,7 @@ const getFilms = () => {
 };
   
 
-const getGeography = () => {
+export const getGeography = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=50&category=22&difficulty=easy&type=multiple")
         .then((response) => {
@@ -95,7 +96,7 @@ const getGeography = () => {
 };
   
 
-const getHistory = () => {
+export const getHistory = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=50&category=23&difficulty=easy&type=multiple")
         .then((response) => {
@@ -119,7 +120,7 @@ const getHistory = () => {
 };
   
 
-const getMusic = () => {
+export const getMusic = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=50&category=12&difficulty=easy&type=multiple")
         .then((response) => {
@@ -143,7 +144,7 @@ const getMusic = () => {
 };
   
 
-const getSports = () => {
+export const getSports = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=40&category=21&difficulty=easy&type=multiple")
         .then((response) => {
@@ -166,7 +167,7 @@ const getSports = () => {
     });
 };
   
-const getTv = () => {
+export const getTv = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=50&category=14&difficulty=easy&type=multiple")
         .then((response) => {
@@ -190,7 +191,7 @@ const getTv = () => {
 };
   
 
-const getVehicles = () => {
+export const getVehicles = () => {
     return new Promise((resolve, reject) => {
       fetch("https://opentdb.com/api.php?amount=15&category=28&difficulty=easy&type=multiple")
         .then((response) => {

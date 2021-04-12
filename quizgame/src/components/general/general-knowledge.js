@@ -6,12 +6,17 @@ const GeneralKnowledge = (props) => {
 
     return (
         <div>
-            {props.data}
+
+
         </div>
     )
 }
 
-
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         insert: () => dispatch(getDataGeneral())
+//     }
+// }
 
 const mapStateToProps = (state) => {
     return ({
