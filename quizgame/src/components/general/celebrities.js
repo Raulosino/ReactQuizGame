@@ -1,11 +1,11 @@
 import React from 'react'
 
-const celebrities = () => {
+const Celebrities = () => {
     return (
         <div>
-            
+
         </div>
     )
 }
 
-export default celebrities
+export default Celebrities

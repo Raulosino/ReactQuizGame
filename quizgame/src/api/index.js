@@ -21,7 +21,7 @@ const getGeneralKnowledge = () => {
         });
     });
 };
-  
+
 
 const getCelebrities = () => {
     return new Promise((resolve, reject) => {
