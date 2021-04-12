@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom';
 
-const About = () => {
+export const General = () => {
     return (
         <div>
-            <h1>This is about Page</h1>
+            general page
             <Link to='/'>
                 <button type="button">Back to home</button>
             </Link>
         </div>
-    );
-};
+    )
+}
 
-export default About;
+export default General;
