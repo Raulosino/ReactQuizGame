@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 
 
-import { getDataGeneral } from '../actions'
+import { getDataGeneral, getDataCelebrities, getDataGeography } from '../actions'
 
 import Films from '../components/general/films';
 import GeneralKnowledge from '../components/general/general-knowledge';
@@ -22,30 +22,38 @@ import Sports from '../components/general/sports';
 
 const General = (props) => {
 
+    let { path } = useRouteMatch();
 
-    const getSomething = () => {
-
+    const getGeneral = () => {
         props.dispatch(getDataGeneral())
     }
 
-    let { path } = useRouteMatch();
+    const getGeo = () => {
+        props.dispatch(getDataGeography())
+    }
+
+    const getCelebrity = () => {
+        props.dispatch(getDataCelebrities())
+    }
+
+
 
     return (
         <>
             <Switch>
                 <Route exact path={path}>
                     <div>
-                        <Link to={`${path}/celebrities`}>Celebrities  </Link>
+                        <Link to={`${path}/celebrities`}> <div onClick={getCelebrity}>Celebrities</div> </Link>
                         <Link to={`${path}/films`}>films  </Link>
-                        <Link to={`${path}/generalknowledge`}> <div onClick={getSomething}>general knowledge</div> </Link>
-                        <Link to={`${path}/geography`}>geography </Link>
+                        <Link to={`${path}/generalknowledge`}> <div onClick={getGeneral}>General Knowledge</div> </Link>
+                        <Link to={`${path}/geography`}> <div onClick={getGeo}>Geography</div> </Link>
                         <Link to={`${path}/history`}>history </Link>
                         <Link to={`${path}/music`}>music </Link>
                         <Link to={`${path}/sports`}>sports </Link>
                         <Link to={`${path}/tv`}>tv </Link>
                         <Link to={`${path}/vehicles`}>vehicles </Link>
                         <Link to='/'>
-                        <button type="button">Back to home</button>
+                            <button type="button">Back to home</button>
                         </Link>
                     </div>
                 </Route>
