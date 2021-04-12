@@ -14,9 +14,6 @@ const App = () => {
                 <Route path = "/play"><Play/></Route>
                 <Route path = "/about"><About/></Route>
             </Switch>
-            <Link to = "/play"><button>Play</button></Link>
-            <Link to = "/about"><button>About</button></Link>
-
       </Router>
   )
 };
