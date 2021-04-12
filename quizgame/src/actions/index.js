@@ -1,4 +1,5 @@
-import { getGeneralKnowledge, getHistory, getSports } from "../api";
+
+import { getGeneralKnowledge, getCelebrities, getGeography, getHistory, getSports } from '../api;
 
 export const getDataGeneral = () => {
   return (dispatch) => {
@@ -9,19 +10,66 @@ export const getDataGeneral = () => {
     getGeneralKnowledge()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
-          payload: data,
-        });
-        console.log(data);
-      })
-      .catch((error) => {
+
+            type: 'START',
+            payload: null
+        })
+        getGeneralKnowledge().then(data => {
+            dispatch({
+                type: 'SUCCESS',
+                payload: data
+            })
+            console.log(data)
+        }).catch(error => {
+            dispatch({
+                type: 'FAILED',
+                payload: error
+            })
+        })
+    }
+}
+
+export const getDataGeography = () => {
+    return (dispatch) => {
         dispatch({
-          type: "FAILED",
-          payload: error,
-        });
-      });
-  };
-};
+            type: 'START',
+            payload: null
+        })
+        getGeography().then(data => {
+            dispatch({
+                type: 'SUCCESS',
+                payload: data
+            })
+            console.log(data)
+        }).catch(error => {
+            dispatch({
+                type: 'FAILED',
+                payload: error
+            })
+        })
+    }
+}
+
+export const getDataCelebrities = () => {
+    return (dispatch) => {
+        dispatch({
+            type: 'START',
+            payload: null
+        })
+        getCelebrities().then(data => {
+            dispatch({
+                type: 'SUCCESS',
+                payload: data
+            })
+            console.log(data)
+        }).catch(error => {
+            dispatch({
+                type: 'FAILED',
+                payload: error
+            })
+        })
+    }
+}
 
 export const getDataHistory = () => {
   return (dispatch) => {
@@ -68,3 +116,4 @@ export const getDataSports = () => {
       });
   };
 };
+

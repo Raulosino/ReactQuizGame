@@ -1,31 +1,40 @@
-import React from "react";
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
-import { connect } from "react-redux";
 
-import { getDataGeneral, getDataHistory, getDataSports } from "../actions";
+import React from 'react'
+import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { connect } from 'react-redux'
 
-import Films from "../components/general/films";
-import GeneralKnowledge from "../components/general/general-knowledge";
-import Geography from "../components/general/geography";
-import History from "../components/general/history";
-import Music from "../components/general/music";
-import Tv from "../components/general/tv";
-import Vehicles from "../components/general/vehicles";
-import Celebrities from "../components/general/celebrities";
-import Sports from "../components/general/sports";
+import { getDataGeneral, getDataCelebrities, getDataGeography } from '../actions'
 
-const General = (props) => {
-  const getSomething = () => {
-    props.dispatch(getDataGeneral());
-  };
+import Films from '../components/general/films';
+import GeneralKnowledge from '../components/general/general-knowledge';
+import Geography from '../components/general/geography';
+import History from '../components/general/history';
+import Music from '../components/general/music';
+import Tv from '../components/general/tv';
+import Vehicles from '../components/general/vehicles';
+import Celebrities from '../components/general/celebrities';
+import Sports from '../components/general/sports';
+
 
   const getHistory = () => {
     props.dispatch(getDataHistory());
   };
 
+   const getGeneral = () => {
+        props.dispatch(getDataGeneral())
+    }
+
   const getSports = () => {
     props.dispatch(getDataSports());
   };
+
+     const getGeo = () => {
+        props.dispatch(getDataGeography())
+    }
+
+    const getCelebrity = () => {
+        props.dispatch(getDataCelebrities())
+    }
 
   let { path } = useRouteMatch();
 
@@ -34,13 +43,13 @@ const General = (props) => {
       <Switch>
         <Route exact path={path}>
           <div>
-            <Link to={`${path}/celebrities`}>Celebrities </Link>
+            <Link to={`${path}/celebrities`}> <div onClick={getCelebrity}>Celebrities</div> </Link>
             <Link to={`${path}/films`}>films </Link>
             <Link to={`${path}/generalknowledge`}>
               {" "}
-              <div onClick={getSomething}>general knowledge</div>{" "}
+              <div onClick={getGeneral}>general knowledge</div>{" "}
             </Link>
-            <Link to={`${path}/geography`}>geography </Link>
+            <Link to={`${path}/geography`}> <div onClick={getGeo}>Geography</div> </Link>
             <Link to={`${path}/history`}>
               <div onClick={getHistory}>History</div>{" "}
             </Link>
@@ -86,5 +95,6 @@ const General = (props) => {
     </>
   );
 };
+
 
 export default connect(null)(General);
