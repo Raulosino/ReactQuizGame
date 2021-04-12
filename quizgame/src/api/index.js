@@ -32,7 +32,7 @@ export const getCelebrities = () => {
           response
             .json()
             .then((data) => {
-              resolve(data);
+              resolve(data.results);
             })
             .catch((error) => {
               reject(error);
@@ -82,7 +82,7 @@ export const getGeography = () => {
           response
             .json()
             .then((data) => {
-              resolve(data);
+              resolve(data.results);
             })
             .catch((error) => {
               reject(error);

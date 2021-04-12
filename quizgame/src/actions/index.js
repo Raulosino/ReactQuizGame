@@ -1,5 +1,10 @@
-
-import { getGeneralKnowledge, getCelebrities, getGeography, getHistory, getSports } from '../api;
+import {
+  getGeneralKnowledge,
+  getCelebrities,
+  getGeography,
+  getHistory,
+  getSports,
+} from "../api";
 
 export const getDataGeneral = () => {
   return (dispatch) => {
@@ -7,69 +12,74 @@ export const getDataGeneral = () => {
       type: "START",
       payload: null,
     });
-    getGeneralKnowledge()
-      .then((data) => {
-        dispatch({
-
-            type: 'START',
-            payload: null
+    getGeneralKnowledge().then((data) => {
+      dispatch({
+        type: "START",
+        payload: null,
+      });
+      getGeneralKnowledge()
+        .then((data) => {
+          dispatch({
+            type: "SUCCESS",
+            payload: data,
+          });
+          console.log(data);
         })
-        getGeneralKnowledge().then(data => {
-            dispatch({
-                type: 'SUCCESS',
-                payload: data
-            })
-            console.log(data)
-        }).catch(error => {
-            dispatch({
-                type: 'FAILED',
-                payload: error
-            })
-        })
-    }
-}
+        .catch((error) => {
+          dispatch({
+            type: "FAILED",
+            payload: error,
+          });
+        });
+    });
+  };
+};
 
 export const getDataGeography = () => {
-    return (dispatch) => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getGeography()
+      .then((data) => {
         dispatch({
-            type: 'START',
-            payload: null
-        })
-        getGeography().then(data => {
-            dispatch({
-                type: 'SUCCESS',
-                payload: data
-            })
-            console.log(data)
-        }).catch(error => {
-            dispatch({
-                type: 'FAILED',
-                payload: error
-            })
-        })
-    }
-}
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
 
 export const getDataCelebrities = () => {
-    return (dispatch) => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getCelebrities()
+      .then((data) => {
         dispatch({
-            type: 'START',
-            payload: null
-        })
-        getCelebrities().then(data => {
-            dispatch({
-                type: 'SUCCESS',
-                payload: data
-            })
-            console.log(data)
-        }).catch(error => {
-            dispatch({
-                type: 'FAILED',
-                payload: error
-            })
-        })
-    }
-}
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
 
 export const getDataHistory = () => {
   return (dispatch) => {
@@ -116,4 +126,3 @@ export const getDataSports = () => {
       });
   };
 };
-

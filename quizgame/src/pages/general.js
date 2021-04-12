@@ -1,40 +1,45 @@
+import React from "react";
+import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import { connect } from "react-redux";
 
-import React from 'react'
-import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
-import { connect } from 'react-redux'
+import {
+  getDataGeneral,
+  getDataCelebrities,
+  getDataGeography,
+  getDataHistory,
+  getDataSports,
+} from "../actions";
 
-import { getDataGeneral, getDataCelebrities, getDataGeography } from '../actions'
+import Films from "../components/general/films";
+import GeneralKnowledge from "../components/general/general-knowledge";
+import Geography from "../components/general/geography";
+import History from "../components/general/history";
+import Music from "../components/general/music";
+import Tv from "../components/general/tv";
+import Vehicles from "../components/general/vehicles";
+import Celebrities from "../components/general/celebrities";
+import Sports from "../components/general/sports";
 
-import Films from '../components/general/films';
-import GeneralKnowledge from '../components/general/general-knowledge';
-import Geography from '../components/general/geography';
-import History from '../components/general/history';
-import Music from '../components/general/music';
-import Tv from '../components/general/tv';
-import Vehicles from '../components/general/vehicles';
-import Celebrities from '../components/general/celebrities';
-import Sports from '../components/general/sports';
-
-
+const General = (props) => {
   const getHistory = () => {
     props.dispatch(getDataHistory());
   };
 
-   const getGeneral = () => {
-        props.dispatch(getDataGeneral())
-    }
+  const getGeneral = () => {
+    props.dispatch(getDataGeneral());
+  };
 
   const getSports = () => {
     props.dispatch(getDataSports());
   };
 
-     const getGeo = () => {
-        props.dispatch(getDataGeography())
-    }
+  const getGeo = () => {
+    props.dispatch(getDataGeography());
+  };
 
-    const getCelebrity = () => {
-        props.dispatch(getDataCelebrities())
-    }
+  const getCelebrity = () => {
+    props.dispatch(getDataCelebrities());
+  };
 
   let { path } = useRouteMatch();
 
@@ -43,13 +48,19 @@ import Sports from '../components/general/sports';
       <Switch>
         <Route exact path={path}>
           <div>
-            <Link to={`${path}/celebrities`}> <div onClick={getCelebrity}>Celebrities</div> </Link>
+            <Link to={`${path}/celebrities`}>
+              {" "}
+              <div onClick={getCelebrity}>Celebrities</div>{" "}
+            </Link>
             <Link to={`${path}/films`}>films </Link>
             <Link to={`${path}/generalknowledge`}>
               {" "}
               <div onClick={getGeneral}>general knowledge</div>{" "}
             </Link>
-            <Link to={`${path}/geography`}> <div onClick={getGeo}>Geography</div> </Link>
+            <Link to={`${path}/geography`}>
+              {" "}
+              <div onClick={getGeo}>Geography</div>{" "}
+            </Link>
             <Link to={`${path}/history`}>
               <div onClick={getHistory}>History</div>{" "}
             </Link>
@@ -95,6 +106,5 @@ import Sports from '../components/general/sports';
     </>
   );
 };
-
 
 export default connect(null)(General);
