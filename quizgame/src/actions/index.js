@@ -1,5 +1,7 @@
 
+
 import { getGeneralKnowledge, getCelebrities, getGeography, getHistory, getSports, getTv, getVehicles } from '../api';
+
 
 export const getDataGeneral = () => {
   return (dispatch) => {
@@ -10,25 +12,19 @@ export const getDataGeneral = () => {
     getGeneralKnowledge()
       .then((data) => {
         dispatch({
-
-          type: 'START',
-          payload: null
-        })
-        getGeneralKnowledge().then(data => {
-          dispatch({
-            type: 'SUCCESS',
-            payload: data
-          })
-          console.log(data)
-        }).catch(error => {
-          dispatch({
-            type: 'FAILED',
-            payload: error
-          })
-        })
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
       })
-  }
-}
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
 
 export const getDataGeography = () => {
   return (dispatch) => {
@@ -118,6 +114,7 @@ export const getDataSports = () => {
   };
 };
 
+
 export const getDataTv = () => {
   return (dispatch) => {
     dispatch({
@@ -141,6 +138,7 @@ export const getDataTv = () => {
   };
 };
 
+
 export const getDataVehicle = () => {
   return (dispatch) => {
     dispatch({
@@ -163,5 +161,4 @@ export const getDataVehicle = () => {
       });
   };
 };
-
 
