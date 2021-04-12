@@ -1,23 +1,14 @@
-import React from 'react'
-import { connect } from 'react-redux';
-
+import React from "react";
+import { connect } from "react-redux";
 
 const GeneralKnowledge = (props) => {
-
-    return (
-        <div>
-
-
-        </div>
-    )
-}
-
-
+  return <div></div>;
+};
 
 const mapStateToProps = (state) => {
-    return ({
-        data: state.resultGeneralQuestions
-    })
-}
+  return {
+    data: state.resultGeneralQuestions,
+  };
+};
 
-export default connect(mapStateToProps)(GeneralKnowledge)
+export default connect(mapStateToProps)(GeneralKnowledge);
