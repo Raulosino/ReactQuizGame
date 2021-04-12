@@ -157,7 +157,7 @@ export const getSports = () => {
           response
             .json()
             .then((data) => {
-              resolve(data);
+              resolve(data.results);
             })
             .catch((error) => {
               reject(error);

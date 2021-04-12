@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { getDataGeneral, getDataHistory } from "../actions";
+import { getDataGeneral, getDataHistory, getDataSports } from "../actions";
 
 import Films from "../components/general/films";
 import GeneralKnowledge from "../components/general/general-knowledge";
@@ -23,6 +23,10 @@ const General = (props) => {
     props.dispatch(getDataHistory());
   };
 
+  const getSports = () => {
+    props.dispatch(getDataSports());
+  };
+
   let { path } = useRouteMatch();
 
   return (
@@ -41,7 +45,9 @@ const General = (props) => {
               <div onClick={getHistory}>History</div>{" "}
             </Link>
             <Link to={`${path}/music`}>music </Link>
-            <Link to={`${path}/sports`}>sports </Link>
+            <Link to={`${path}/sports`}>
+              <div onClick={getSports}>Sports</div>{" "}
+            </Link>
             <Link to={`${path}/tv`}>tv </Link>
             <Link to={`${path}/vehicles`}>vehicles </Link>
             <Link to="/">

@@ -1,4 +1,4 @@
-import { getGeneralKnowledge, getHistory } from "../api";
+import { getGeneralKnowledge, getHistory, getSports } from "../api";
 
 export const getDataGeneral = () => {
   return (dispatch) => {
@@ -30,6 +30,29 @@ export const getDataHistory = () => {
       payload: null,
     });
     getHistory()
+      .then((data) => {
+        dispatch({
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
+
+export const getDataSports = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getSports()
       .then((data) => {
         dispatch({
           type: "SUCCESS",

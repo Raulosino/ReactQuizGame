@@ -44,8 +44,29 @@ const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
     }
 };
 
+let sportsQuestions = {
+    data: [],
+}
+
+const sportsReducer = (resultSportsQuestions = sportsQuestions, action) => {
+    switch (action.type) {
+        case "START":
+        generalQuestions = { data: [], status: "START" };
+        return { ...sportsQuestions };
+        case "SUCCESS":
+        generalQuestions = { data: action.payload, status: "SUCCESS" };
+        return { ...sportsQuestions };
+        case "FAILED":
+        generalQuestions = { data: [], status: "FAILED" };
+        return { ...sportsQuestions };
+        default:
+        return resultSportsQuestions;
+    }
+};
+
 
 export default combineReducers({
     resultGeneralQuestions: generalKnowledgeReducer, 
-    resultHistoryQuestions: historyReducer
+    resultHistoryQuestions: historyReducer, 
+    resultSportsQuestions: sportsReducer
 })
