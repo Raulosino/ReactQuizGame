@@ -24,6 +24,28 @@ const generalKnowledgeReducer = (resultGeneralQuestions = generalQuestions, acti
 
 }
 
+let historyQuestions = {
+    data: []
+}
+
+const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
+    switch (action.type) {
+        case "START":
+        generalQuestions = { data: [], status: "START" };
+        return { ...historyQuestions };
+        case "SUCCESS":
+        generalQuestions = { data: action.payload, status: "SUCCESS" };
+        return { ...historyQuestions };
+        case "FAILED":
+        generalQuestions = { data: [], status: "FAILED" };
+        return { ...historyQuestions };
+        default:
+        return resultHistoryQuestions;
+    }
+};
+
+
 export default combineReducers({
-    resultGeneralQuestions: generalKnowledgeReducer
+    resultGeneralQuestions: generalKnowledgeReducer, 
+    resultHistoryQuestions: historyReducer
 })
