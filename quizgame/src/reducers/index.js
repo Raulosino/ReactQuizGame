@@ -98,25 +98,70 @@ let sportsQuestions = {
 const sportsReducer = (resultSportsQuestions = sportsQuestions, action) => {
     switch (action.type) {
         case "START":
-        generalQuestions = { data: [], status: "START" };
-        return { ...sportsQuestions };
+            generalQuestions = { data: [], status: "START" };
+            return { ...sportsQuestions };
         case "SUCCESS":
-        generalQuestions = { data: action.payload, status: "SUCCESS" };
-        return { ...sportsQuestions };
+            generalQuestions = { data: action.payload, status: "SUCCESS" };
+            return { ...sportsQuestions };
         case "FAILED":
-        generalQuestions = { data: [], status: "FAILED" };
-        return { ...sportsQuestions };
+            generalQuestions = { data: [], status: "FAILED" };
+            return { ...sportsQuestions };
         default:
-        return resultSportsQuestions;
+            return resultSportsQuestions;
+    }
+};
+
+
+
+let tvQuestions = {
+    data: []
+}
+
+
+const tvReducer = (resultTvQuestions = tvQuestions, action) => {
+    switch (action.type) {
+        case "START":
+            tvQuestions = { data: [], status: "START" };
+            return { ...sportsQuestions };
+        case "SUCCESS":
+            tvQuestions = { data: action.payload, status: "SUCCESS" };
+            return { ...sportsQuestions };
+        case "FAILED":
+            tvQuestions = { data: [], status: "FAILED" };
+            return { ...sportsQuestions };
+        default:
+            return resultTvQuestions;
+    }
+};
+
+
+let vehicleQuestions = {
+    data: []
+}
+
+const vehicleReducer = (resultVehicleQuestions = vehicleQuestions, action) => {
+    switch (action.type) {
+        case "START":
+            vehicleQuestions = { data: [], status: "START" };
+            return { ...sportsQuestions };
+        case "SUCCESS":
+            vehicleQuestions = { data: action.payload, status: "SUCCESS" };
+            return { ...sportsQuestions };
+        case "FAILED":
+            vehicleQuestions = { data: [], status: "FAILED" };
+            return { ...sportsQuestions };
+        default:
+            return resultVehicleQuestions;
     }
 };
 
 
 export default combineReducers({
-    resultGeneralQuestions: generalKnowledgeReducer, 
-    resultHistoryQuestions: historyReducer, 
+    resultGeneralQuestions: generalKnowledgeReducer,
+    resultHistoryQuestions: historyReducer,
     resultSportsQuestions: sportsReducer,
-     resultGeography: geographyReducer,
-    resultCelebrities: celebritiesReducer
-
+    resultGeography: geographyReducer,
+    resultCelebrities: celebritiesReducer,
+    resultTv: tvReducer,
+    resultVehicle: vehicleReducer,
 })

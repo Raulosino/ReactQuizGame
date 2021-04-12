@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
@@ -40,6 +41,14 @@ const General = (props) => {
   const getCelebrity = () => {
     props.dispatch(getDataCelebrities());
   };
+  
+  const getTv = () => {
+  props.dispatch(getDataTv())
+  }
+
+const getVehicle = () => {
+  props.dispatch(getDataVehicle())
+  }
 
   let { path } = useRouteMatch();
 
@@ -68,8 +77,12 @@ const General = (props) => {
             <Link to={`${path}/sports`}>
               <div onClick={getSports}>Sports</div>{" "}
             </Link>
-            <Link to={`${path}/tv`}>tv </Link>
-            <Link to={`${path}/vehicles`}>vehicles </Link>
+             <Link to={`${path}/tv`}>
+            <div onClick={getTv}>Television</div>{" "}
+          </Link>
+            <Link to={`${path}/vehicles`}>
+            <div onClick={getVehicle}>Vehicles</div>{" "}
+          </Link>
             <Link to="/">
               <button type="button">Back to home</button>
             </Link>
