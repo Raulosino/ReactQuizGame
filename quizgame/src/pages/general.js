@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
@@ -9,6 +8,8 @@ import {
   getDataGeography,
   getDataHistory,
   getDataSports,
+  getDataTv,
+  getDataVehicle,
 } from "../actions";
 
 import Films from "../components/general/films";
@@ -41,14 +42,14 @@ const General = (props) => {
   const getCelebrity = () => {
     props.dispatch(getDataCelebrities());
   };
-  
-  const getTv = () => {
-  props.dispatch(getDataTv())
-  }
 
-const getVehicle = () => {
-  props.dispatch(getDataVehicle())
-  }
+  const getTv = () => {
+    props.dispatch(getDataTv());
+  };
+
+  const getVehicle = () => {
+    props.dispatch(getDataVehicle());
+  };
 
   let { path } = useRouteMatch();
 
@@ -77,12 +78,12 @@ const getVehicle = () => {
             <Link to={`${path}/sports`}>
               <div onClick={getSports}>Sports</div>{" "}
             </Link>
-             <Link to={`${path}/tv`}>
-            <div onClick={getTv}>Television</div>{" "}
-          </Link>
+            <Link to={`${path}/tv`}>
+              <div onClick={getTv}>Television</div>{" "}
+            </Link>
             <Link to={`${path}/vehicles`}>
-            <div onClick={getVehicle}>Vehicles</div>{" "}
-          </Link>
+              <div onClick={getVehicle}>Vehicles</div>{" "}
+            </Link>
             <Link to="/">
               <button type="button">Back to home</button>
             </Link>

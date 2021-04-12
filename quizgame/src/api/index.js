@@ -182,7 +182,7 @@ export const getTv = () => {
           response
             .json()
             .then((data) => {
-              resolve(data);
+              resolve(data.results);
             })
             .catch((error) => {
               reject(error);
@@ -207,7 +207,7 @@ export const getVehicles = () => {
           response
             .json()
             .then((data) => {
-              resolve(data);
+              resolve(data.results);
             })
             .catch((error) => {
               reject(error);
