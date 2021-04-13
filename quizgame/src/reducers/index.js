@@ -33,43 +33,53 @@ const generalKnowledgeReducer = (resultGeneralQuestions = generalQuestions, acti
 
 }
 
+let musicQuestions = {
+    data: []
+}
 
-const geographyReducer = (resultGeography = geographyQuestions, action) => {
+
+const musicReducer = (resultmusicQuestions = musicQuestions, action) => {
 
     switch (action.type) {
         case 'START':
-            geographyQuestions = { data: [], status: 'START' }
-            return { ...geographyQuestions }
+            musicQuestions = { data: [], status: 'START' }
+            return { ...musicQuestions }
         case 'SUCCESS':
-            geographyQuestions = { data: action.payload, status: 'SUCCESS' }
-            return { ...geographyQuestions }
+            musicQuestions = { data: action.payload, status: 'SUCCESS' }
+            return { ...musicQuestions }
         case 'FAILED':
-            geographyQuestions = { data: [], status: 'FAILED' }
-            return { ...geographyQuestions }
+            musicQuestions = { data: [], status: 'FAILED' }
+            return { ...musicQuestions }
         default:
-            return resultGeography
+            return resultmusicQuestions
+
     }
 
 }
 
-const celebritiesReducer = (resultCelebrities = celebritiesQuestions, action) => {
+
+let filmQuestions = {
+    data: []
+}
+
+
+const filmReducer = (resultfilmQuestions = filmQuestions, action) => {
 
     switch (action.type) {
         case 'START':
-            celebritiesQuestions = { data: [], status: 'START' }
-            return { ...celebritiesQuestions }
+            filmQuestions = { data: [], status: 'START' }
+            return { ...filmQuestions }
         case 'SUCCESS':
-            celebritiesQuestions = { data: action.payload, status: 'SUCCESS' }
-            return { ...celebritiesQuestions }
+            filmQuestions = { data: action.payload, status: 'SUCCESS' }
+            return { ...filmQuestions }
         case 'FAILED':
-            celebritiesQuestions = { data: [], status: 'FAILED' }
-            return { ...celebritiesQuestions }
+            filmQuestions = { data: [], status: 'FAILED' }
+            return { ...filmQuestions }
         default:
-            return resultCelebrities
+            return resultfilmQuestions
     }
 
 }
-
 
 let historyQuestions = {
     data: []
@@ -164,4 +174,7 @@ export default combineReducers({
     resultCelebrities: celebritiesReducer,
     resultTv: tvReducer,
     resultVehicle: vehicleReducer,
+     resultGeneralQuestions: musicReducer,
+    resultfilmQuestions: filmReducer
 })
+
