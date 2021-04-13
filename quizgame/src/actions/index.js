@@ -10,6 +10,7 @@ import {
   getFilms,
 } from "../api";
 
+
 export const getDataGeneral = () => {
   return (dispatch) => {
     dispatch({
