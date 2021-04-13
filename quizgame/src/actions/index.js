@@ -36,20 +36,20 @@ export const getDataGeneral = () => {
 export const getDataGeography = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_GEOGRAPHY",
       payload: null,
     });
     getGeography()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_GEOGRAPHY",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_GEOGRAPHY",
           payload: error,
         });
       });
@@ -59,20 +59,20 @@ export const getDataGeography = () => {
 export const getDataCelebrities = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_CELEBRITIES",
       payload: null,
     });
     getCelebrities()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_CELEBRITIES",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_CELEBRITIES",
           payload: error,
         });
       });
@@ -82,20 +82,20 @@ export const getDataCelebrities = () => {
 export const getDataHistory = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_HISTORY",
       payload: null,
     });
     getHistory()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_HISTORY",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_HISTORY",
           payload: error,
         });
       });
@@ -105,20 +105,20 @@ export const getDataHistory = () => {
 export const getDataSports = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_SPORTS",
       payload: null,
     });
     getSports()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_SPORTS",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_SPORTS",
           payload: error,
         });
       });
@@ -128,20 +128,20 @@ export const getDataSports = () => {
 export const getDataTv = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_TV",
       payload: null,
     });
     getTv()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_TV",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_TV",
           payload: error,
         });
       });
@@ -151,20 +151,20 @@ export const getDataTv = () => {
 export const getDataVehicle = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_VEHICLE",
       payload: null,
     });
     getVehicles()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_VEHICLE",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_VEHICLE",
           payload: error,
         });
       });
@@ -174,20 +174,20 @@ export const getDataVehicle = () => {
 export const getDataMusic = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_MUSIC",
       payload: null,
     });
     getMusic()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_MUSIC",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_MUSIC",
           payload: error,
         });
       });
@@ -197,20 +197,20 @@ export const getDataMusic = () => {
 export const getDataFilms = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_FILMS",
       payload: null,
     });
     getFilms()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_FILMS",
           payload: data,
         });
         console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_FILMS",
           payload: error,
         });
       });
