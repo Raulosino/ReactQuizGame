@@ -1,3 +1,5 @@
+const apiKey = process.env.REACT_APP_API_KEY;
+
 export const getGeneralKnowledge = () => {
   return new Promise((resolve, reject) => {
     fetch(
