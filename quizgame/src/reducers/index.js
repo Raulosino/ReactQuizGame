@@ -94,13 +94,13 @@ let historyQuestions = {
 const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
     switch (action.type) {
         case "START_HISTORY":
-        generalQuestions = { data: [], status: "START" };
+        historyQuestions = { data: [], status: "START" };
         return { ...historyQuestions };
         case "SUCCESS_HISTORY":
-        generalQuestions = { data: action.payload, status: "SUCCESS" };
+        historyQuestions = { data: action.payload, status: "SUCCESS" };
         return { ...historyQuestions };
         case "FAILED_HISTORY":
-        generalQuestions = { data: [], status: "FAILED" };
+        historyQuestions = { data: [], status: "FAILED" };
         return { ...historyQuestions };
         default:
         return resultHistoryQuestions;
@@ -115,13 +115,13 @@ let sportsQuestions = {
 const sportsReducer = (resultSportsQuestions = sportsQuestions, action) => {
     switch (action.type) {
         case "START_SPORTS":
-            generalQuestions = { data: [], status: "START" };
+            sportsQuestions = { data: [], status: "START" };
             return { ...sportsQuestions };
         case "SUCCESS_SPORTS":
-            generalQuestions = { data: action.payload, status: "SUCCESS" };
+            sportsQuestions = { data: action.payload, status: "SUCCESS" };
             return { ...sportsQuestions };
         case "FAILED_SPORTS":
-            generalQuestions = { data: [], status: "FAILED" };
+            sportsQuestions = { data: [], status: "FAILED" };
             return { ...sportsQuestions };
         default:
             return resultSportsQuestions;
