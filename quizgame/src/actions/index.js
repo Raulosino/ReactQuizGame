@@ -1,4 +1,14 @@
-import { getGeneralKnowledge, getHistory, getSports } from "../api";
+import {
+  getGeneralKnowledge,
+  getCelebrities,
+  getGeography,
+  getHistory,
+  getSports,
+  getTv,
+  getVehicles,
+  getMusic,
+  getFilms,
+} from "../api";
 
 export const getDataGeneral = () => {
   return (dispatch) => {
@@ -17,6 +27,52 @@ export const getDataGeneral = () => {
       .catch((error) => {
         dispatch({
           type: "FAILED_GENERAL",
+          payload: error,
+        });
+      });
+  };
+};
+
+export const getDataGeography = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getGeography()
+      .then((data) => {
+        dispatch({
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
+
+export const getDataCelebrities = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getCelebrities()
+      .then((data) => {
+        dispatch({
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
           payload: error,
         });
       });
@@ -53,6 +109,98 @@ export const getDataSports = () => {
       payload: null,
     });
     getSports()
+      .then((data) => {
+        dispatch({
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
+
+export const getDataTv = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getTv()
+      .then((data) => {
+        dispatch({
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
+
+export const getDataVehicle = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getVehicles()
+      .then((data) => {
+        dispatch({
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
+
+export const getDataMusic = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getMusic()
+      .then((data) => {
+        dispatch({
+          type: "SUCCESS",
+          payload: data,
+        });
+        console.log(data);
+      })
+      .catch((error) => {
+        dispatch({
+          type: "FAILED",
+          payload: error,
+        });
+      });
+  };
+};
+
+export const getDataFilms = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "START",
+      payload: null,
+    });
+    getFilms()
       .then((data) => {
         dispatch({
           type: "SUCCESS",

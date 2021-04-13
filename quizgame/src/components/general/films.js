@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 
 const Films = () => {
     return (
@@ -8,4 +10,12 @@ const Films = () => {
     )
 }
 
-export default Films
+
+const mapStateToProps = (state) => {
+    return ({
+        data: state.resultfilmQuestions
+    })
+}
+
+
+export default connect(mapStateToProps)(Films);

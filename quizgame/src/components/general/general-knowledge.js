@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 const GeneralKnowledge = (props) => {
+
   console.log(props.data.data);
   console.log(props.data.status);
 
@@ -18,8 +19,7 @@ const GeneralKnowledge = (props) => {
             )
         default: return null
     }
-  
-  
+
 };
 
 const mapStateToProps = (state) => {

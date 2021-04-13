@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux';
+
+
 
 const Music = () => {
     return (
@@ -8,4 +11,12 @@ const Music = () => {
     )
 }
 
-export default Music
+
+const mapStateToProps = (state) => {
+    return ({
+        data: state.resultmusicQuestions
+    })
+}
+
+
+export default connect(mapStateToProps)(Music);
