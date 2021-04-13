@@ -10,6 +10,8 @@ import {
   getDataSports,
   getDataTv,
   getDataVehicle,
+  getDataFilms,
+  getDataMusic,
 } from "../actions";
 
 import Films from "../components/general/films";
@@ -51,6 +53,14 @@ const General = (props) => {
     props.dispatch(getDataVehicle());
   };
 
+  const getFilms = () => {
+    props.dispatch(getDataFilms());
+  };
+
+  const getMusic = () => {
+    props.dispatch(getDataMusic());
+  };
+
   let { path } = useRouteMatch();
 
   return (
@@ -62,7 +72,9 @@ const General = (props) => {
               {" "}
               <div onClick={getCelebrity}>Celebrities</div>{" "}
             </Link>
-            <Link to={`${path}/films`}>films </Link>
+            <Link to={`${path}/films`}>
+              <div onClick={getFilms}>Films</div>{" "}
+            </Link>
             <Link to={`${path}/generalknowledge`}>
               {" "}
               <div onClick={getGeneral}>general knowledge</div>{" "}
@@ -74,7 +86,9 @@ const General = (props) => {
             <Link to={`${path}/history`}>
               <div onClick={getHistory}>History</div>{" "}
             </Link>
-            <Link to={`${path}/music`}>music </Link>
+            <Link to={`${path}/music`}>
+              <div onClick={getMusic}>Music</div>
+            </Link>
             <Link to={`${path}/sports`}>
               <div onClick={getSports}>Sports</div>{" "}
             </Link>

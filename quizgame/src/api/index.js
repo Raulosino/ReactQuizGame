@@ -57,7 +57,7 @@ export const getFilms = () => {
           response
             .json()
             .then((data) => {
-              resolve(data);
+              resolve(data.results);
             })
             .catch((error) => {
               reject(error);
@@ -132,7 +132,7 @@ export const getMusic = () => {
           response
             .json()
             .then((data) => {
-              resolve(data);
+              resolve(data.results);
             })
             .catch((error) => {
               reject(error);
