@@ -3,20 +3,20 @@ import { getGeneralKnowledge, getHistory, getSports } from "../api";
 export const getDataGeneral = () => {
   return (dispatch) => {
     dispatch({
-      type: "START",
+      type: "START_GENERAL",
       payload: null,
     });
     getGeneralKnowledge()
       .then((data) => {
         dispatch({
-          type: "SUCCESS",
+          type: "SUCCESS_GENERAL",
           payload: data,
         });
-        console.log(data);
+        //console.log(data);
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILED_GENERAL",
           payload: error,
         });
       });

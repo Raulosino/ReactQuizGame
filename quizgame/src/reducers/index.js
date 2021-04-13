@@ -3,19 +3,20 @@ import { combineReducers } from 'redux'
 
 let generalQuestions = {
 
-    data: []
+    data: [], 
+    status: ''
 }
 
 const generalKnowledgeReducer = (resultGeneralQuestions = generalQuestions, action) => {
 
     switch (action.type) {
-        case 'START':
+        case 'START_GENERAL':
             generalQuestions = { data: [], status: 'START' }
             return { ...generalQuestions }
-        case 'SUCCESS':
+        case 'SUCCESS_GENERAL':
             generalQuestions = { data: action.payload, status: 'SUCCESS' }
             return { ...generalQuestions }
-        case 'FAILED':
+        case 'FAILED_GENERAL':
             generalQuestions = { data: [], status: 'FAILED' }
             return { ...generalQuestions }
         default:
