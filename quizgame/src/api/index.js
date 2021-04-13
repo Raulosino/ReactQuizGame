@@ -9,7 +9,7 @@ export const getGeneralKnowledge = () => {
             .json()
             .then((data) => {
               resolve(data.results);
-              console.log(data);
+              //console.log(data);
             })
             .catch((error) => {
               reject(error);
