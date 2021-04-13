@@ -94,14 +94,15 @@ let historyQuestions = {
 const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
     switch (action.type) {
         case "START_HISTORY":
-            historyQuestions = { data: [], status: "START" };
-            return { ...historyQuestions };
+
+        historyQuestions = { data: [], status: "START" };
+        return { ...historyQuestions };
         case "SUCCESS_HISTORY":
-            historyQuestions = { data: action.payload, status: "SUCCESS" };
-            return { ...historyQuestions };
+        historyQuestions = { data: action.payload, status: "SUCCESS" };
+        return { ...historyQuestions };
         case "FAILED_HISTORY":
-            historyQuestions = { data: [], status: "FAILED" };
-            return { ...historyQuestions };
+        historyQuestions = { data: [], status: "FAILED" };
+        return { ...historyQuestions };
         default:
             return resultHistoryQuestions;
     }
