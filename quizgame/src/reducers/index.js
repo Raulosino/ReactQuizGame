@@ -6,6 +6,15 @@ let generalQuestions = {
     data: []
 }
 
+let geographyQuestions = {
+
+    data: []
+}
+
+let celebritiesQuestions = {
+    data:[]
+}
+
 const generalKnowledgeReducer = (resultGeneralQuestions = generalQuestions, action) => {
 
     switch (action.type) {
@@ -23,7 +32,6 @@ const generalKnowledgeReducer = (resultGeneralQuestions = generalQuestions, acti
     }
 
 }
-
 
 let musicQuestions = {
     data: []
@@ -44,6 +52,7 @@ const musicReducer = (resultmusicQuestions = musicQuestions, action) => {
             return { ...musicQuestions }
         default:
             return resultmusicQuestions
+
     }
 
 }
@@ -72,11 +81,100 @@ const filmReducer = (resultfilmQuestions = filmQuestions, action) => {
 
 }
 
+let historyQuestions = {
+    data: []
+}
+
+const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
+    switch (action.type) {
+        case "START":
+        generalQuestions = { data: [], status: "START" };
+        return { ...historyQuestions };
+        case "SUCCESS":
+        generalQuestions = { data: action.payload, status: "SUCCESS" };
+        return { ...historyQuestions };
+        case "FAILED":
+        generalQuestions = { data: [], status: "FAILED" };
+        return { ...historyQuestions };
+        default:
+        return resultHistoryQuestions;
+    }
+};
+
+let sportsQuestions = {
+    data: [],
+}
+
+const sportsReducer = (resultSportsQuestions = sportsQuestions, action) => {
+    switch (action.type) {
+        case "START":
+            generalQuestions = { data: [], status: "START" };
+            return { ...sportsQuestions };
+        case "SUCCESS":
+            generalQuestions = { data: action.payload, status: "SUCCESS" };
+            return { ...sportsQuestions };
+        case "FAILED":
+            generalQuestions = { data: [], status: "FAILED" };
+            return { ...sportsQuestions };
+        default:
+            return resultSportsQuestions;
+    }
+};
+
+
+
+let tvQuestions = {
+    data: []
+}
+
+
+const tvReducer = (resultTvQuestions = tvQuestions, action) => {
+    switch (action.type) {
+        case "START":
+            tvQuestions = { data: [], status: "START" };
+            return { ...sportsQuestions };
+        case "SUCCESS":
+            tvQuestions = { data: action.payload, status: "SUCCESS" };
+            return { ...sportsQuestions };
+        case "FAILED":
+            tvQuestions = { data: [], status: "FAILED" };
+            return { ...sportsQuestions };
+        default:
+            return resultTvQuestions;
+    }
+};
+
+
+let vehicleQuestions = {
+    data: []
+}
+
+const vehicleReducer = (resultVehicleQuestions = vehicleQuestions, action) => {
+    switch (action.type) {
+        case "START":
+            vehicleQuestions = { data: [], status: "START" };
+            return { ...sportsQuestions };
+        case "SUCCESS":
+            vehicleQuestions = { data: action.payload, status: "SUCCESS" };
+            return { ...sportsQuestions };
+        case "FAILED":
+            vehicleQuestions = { data: [], status: "FAILED" };
+            return { ...sportsQuestions };
+        default:
+            return resultVehicleQuestions;
+    }
+};
+
 
 export default combineReducers({
     resultGeneralQuestions: generalKnowledgeReducer,
-    resultGeneralQuestions: musicReducer,
+    resultHistoryQuestions: historyReducer,
+    resultSportsQuestions: sportsReducer,
+    resultGeography: geographyReducer,
+    resultCelebrities: celebritiesReducer,
+    resultTv: tvReducer,
+    resultVehicle: vehicleReducer,
+     resultGeneralQuestions: musicReducer,
     resultfilmQuestions: filmReducer
 })
-
 
