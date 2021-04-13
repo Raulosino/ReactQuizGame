@@ -3,18 +3,18 @@ import { combineReducers } from 'redux'
 
 let generalQuestions = {
 
-    data: [], 
+    data: [],
     status: ''
 }
 
 let geographyQuestions = {
 
-    data: [], 
+    data: [],
     status: ''
 }
 
 let celebritiesQuestions = {
-    data:[], 
+    data: [],
     status: ''
 }
 
@@ -87,13 +87,14 @@ const filmReducer = (resultFilmQuestions = filmQuestions, action) => {
 }
 
 let historyQuestions = {
-    data: [], 
+    data: [],
     status: ''
 }
 
 const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
     switch (action.type) {
         case "START_HISTORY":
+
         historyQuestions = { data: [], status: "START" };
         return { ...historyQuestions };
         case "SUCCESS_HISTORY":
@@ -103,7 +104,7 @@ const historyReducer = (resultHistoryQuestions = historyQuestions, action) => {
         historyQuestions = { data: [], status: "FAILED" };
         return { ...historyQuestions };
         default:
-        return resultHistoryQuestions;
+            return resultHistoryQuestions;
     }
 };
 
@@ -140,13 +141,13 @@ const tvReducer = (resultTvQuestions = tvQuestions, action) => {
     switch (action.type) {
         case "START_TV":
             tvQuestions = { data: [], status: "START" };
-            return { ...sportsQuestions };
+            return { ...tvQuestions };
         case "SUCCESS_TV":
             tvQuestions = { data: action.payload, status: "SUCCESS" };
-            return { ...sportsQuestions };
+            return { ...tvQuestions };
         case "FAILED_TV":
             tvQuestions = { data: [], status: "FAILED" };
-            return { ...sportsQuestions };
+            return { ...tvQuestions };
         default:
             return resultTvQuestions;
     }
@@ -154,7 +155,7 @@ const tvReducer = (resultTvQuestions = tvQuestions, action) => {
 
 
 let vehicleQuestions = {
-    data: [], 
+    data: [],
     status: ''
 }
 
@@ -162,13 +163,13 @@ const vehicleReducer = (resultVehicleQuestions = vehicleQuestions, action) => {
     switch (action.type) {
         case "START_VEHICLE":
             vehicleQuestions = { data: [], status: "START" };
-            return { ...sportsQuestions };
+            return { ...vehicleQuestions };
         case "SUCCESS_VEHICLE":
             vehicleQuestions = { data: action.payload, status: "SUCCESS" };
-            return { ...sportsQuestions };
+            return { ...vehicleQuestions };
         case "FAILED_VEHICLE":
             vehicleQuestions = { data: [], status: "FAILED" };
-            return { ...sportsQuestions };
+            return { ...vehicleQuestions };
         default:
             return resultVehicleQuestions;
     }
@@ -219,7 +220,7 @@ export default combineReducers({
     resultCelebrities: celebritiesReducer,
     resultTv: tvReducer,
     resultVehicle: vehicleReducer,
-     resultMusicQuestions: musicReducer,
+    resultMusicQuestions: musicReducer,
     resultFilmQuestions: filmReducer
 })
 
