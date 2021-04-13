@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { connect } from "react-redux";
 import { getAnswers } from '../getAnswers';
 
@@ -30,7 +30,7 @@ const Vehicles = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.resultGeneralQuestions,
+        data: state.resultVehicle,
     };
 };
 
