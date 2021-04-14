@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getAnswers } from '../getAnswers';
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { updateScore } from '../../actions';
 
 const History = (props) => {
 
@@ -23,6 +24,7 @@ const History = (props) => {
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.backgroundColor = "red";
       });
+      props.dispatch(updateScore(100))
     } else {
       document.getElementById(
         `${props.data.data[index].correct_answer}`
