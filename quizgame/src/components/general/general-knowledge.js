@@ -3,6 +3,7 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {getAnswers} from '../getAnswers';
+import {updateScore} from '../../actions'
 
 const GeneralKnowledge = (props) => {
 
@@ -23,6 +24,7 @@ const GeneralKnowledge = (props) => {
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.backgroundColor = 'red'
       })
+      props.dispatch(updateScore(100))
     } else {
       document.getElementById(`${props.data.data[index].correct_answer}`).style.backgroundColor = "green"
       props.data.data[index].incorrect_answers.map((elem) => {

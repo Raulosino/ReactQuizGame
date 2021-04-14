@@ -65,6 +65,11 @@ const General = (props) => {
 
   return (
     <>
+      <div class="coin">
+        <div class="side heads">$</div>
+        <div class="side tails">$</div>
+      </div>
+      <div>{props.data}</div>
       <Switch>
         <Route exact path={path}>
           <div>
@@ -135,4 +140,10 @@ const General = (props) => {
   );
 };
 
-export default connect(null)(General);
+const mapStateToProps = (state) => {
+  return {
+    data: state.resultScore,
+  };
+};
+
+export default connect(mapStateToProps)(General);

@@ -10,7 +10,6 @@ import {
   getFilms,
 } from "../api";
 
-
 export const getDataGeneral = () => {
   return (dispatch) => {
     dispatch({
@@ -215,5 +214,12 @@ export const getDataFilms = () => {
           payload: error,
         });
       });
+  };
+};
+
+export const updateScore = (score) => {
+  return {
+    type: "UPDATE_SCORE",
+    payload: score,
   };
 };

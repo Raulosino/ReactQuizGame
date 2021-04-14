@@ -211,6 +211,18 @@ const celebritiesReducer = (resultCelebrities = celebritiesQuestions, action) =>
 
 }
 
+let score = 500;
+
+const scoreReducer = (resultScore = score, action) => {
+    if(action.type === 'UPDATE_SCORE'){
+        console.log(action.payload)
+        score = score + action.payload
+        console.log(score)
+        return score;
+    }
+    return resultScore;
+}
+
 
 export default combineReducers({
     resultGeneralQuestions: generalKnowledgeReducer,
@@ -221,6 +233,7 @@ export default combineReducers({
     resultTv: tvReducer,
     resultVehicle: vehicleReducer,
     resultMusicQuestions: musicReducer,
-    resultFilmQuestions: filmReducer
+    resultFilmQuestions: filmReducer,
+    resultScore: scoreReducer
 })
 
