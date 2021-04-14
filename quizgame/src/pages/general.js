@@ -65,8 +65,9 @@ const General = (props) => {
 
   return (
     <>
-      <div>
-        <div className="coin">{props.data}</div>
+      <div className="scoreBox">
+        <div className="coin"></div>
+        <div className="score">{props.data}</div>
       </div>
 
       <Switch>
