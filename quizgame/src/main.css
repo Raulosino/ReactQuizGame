@@ -35,7 +35,7 @@
   border: 2px solid black;
   border-radius: 20px 20px;
   margin: 12% auto;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 h2 {
   margin: 60px 80px 0 80px;
@@ -72,4 +72,29 @@ h2 {
   height: 50px;
   background-image: url(../src/img/rsz_1euro-145386_640.png);
   z-index: 2;
+}
+.sports {
+  background-image: url(../src/img/sport-2678653_1920.jpg);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.guySports {
+  background-image: url(../src/imageedit_2_4402248467.jpg);
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 0 30px;
+}
+.history {
+  background-image: url(../src/img/map-3409359_1920.jpg);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
 }
