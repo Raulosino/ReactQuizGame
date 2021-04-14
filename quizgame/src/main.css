@@ -1,0 +1,20 @@
+.genKnowledge {
+  background-image: url(../src/img/question-1500086_1920.jpg);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.genContainer {
+  background-color: white;
+  width: 800px;
+  height: 700px;
+  margin: 10% auto;
+  border-radius: 20px 20px;
+}
+.genBtn {
+  margin: 5% auto;
+  width: 500px;
+  color: black;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
 import {getAnswers} from '../getAnswers';
 
@@ -32,7 +33,7 @@ const GeneralKnowledge = (props) => {
 
   const goToNext = () => {
 
-      document.querySelectorAll('li').forEach(elem => elem.style.backgroundColor = 'white')
+      document.querySelectorAll('button').forEach(elem => elem.style.backgroundColor = 'blue')
       setState({index: state.index+1})
      
   }
@@ -44,13 +45,20 @@ const GeneralKnowledge = (props) => {
           return <h2>FAILED</h2>
       case 'SUCCESS':
           return (
-            <>
-              <h1>{props.data.data[index].question}</h1>
-              {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) => 
-                  <li key={idx} id={elem} onClick={(e) => checkAnswer(e)}>{elem}</li>
-              )}
-              <button onClick={goToNext}>Next Question</button>
-            </>
+            <div className = "genKnowledge">
+              <Container>
+                <Row>
+                  <div className="genContainer">
+                    <h1 dangerouslySetInnerHTML={{__html: props.data.data[index].question,}}/>
+                    {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) => 
+                      <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="genBtn">{elem}</Button>
+                    )}
+                    <Button onClick={goToNext}>Next Question</Button>
+                  </div>
+                </Row>
+              </Container>
+              
+            </div>
           )
       default: return null
   }
