@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import {getAnswers} from '../getAnswers';
 
 const GeneralKnowledge = (props) => {
@@ -45,20 +46,30 @@ const GeneralKnowledge = (props) => {
           return <h2>FAILED</h2>
       case 'SUCCESS':
           return (
-            <div className = "genKnowledge">
-              <Container>
-                <Row>
-                  <div className="genContainer">
-                    <h1 dangerouslySetInnerHTML={{__html: props.data.data[index].question,}}/>
-                    {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) => 
-                      <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="genBtn">{elem}</Button>
-                    )}
-                    <Button onClick={goToNext}>Next Question</Button>
+            <>
+              <Container className="mt-5">
+                <div className="mainContainer">
+                  <div className="headingBox">
+                    <h2 className="text-center" dangerouslySetInnerHTML={{__html: props.data.data[index].question,}}/>
                   </div>
-                </Row>
+                  <Row>
+                    <Col lg={3}>
+                      <div className="guy"></div>
+                    </Col>
+                    <Col lg={7}className="genContainer">
+                      {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) => 
+                        <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="genBtn">{elem}</Button>
+                      )}
+                      <div className=" d-flex justify-content-between mt-5 col-centered">
+                        <Link to="/general"><Button className='backBtn'>Back</Button></Link>
+                        <Button onClick={goToNext} className="nextBtn">Next</Button>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
               </Container>
               
-            </div>
+            </>
           )
       default: return null
   }
