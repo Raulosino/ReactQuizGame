@@ -35,7 +35,9 @@ const History = (props) => {
     document
       .querySelectorAll("li")
       .forEach((elem) => (elem.style.backgroundColor = "white"));
-    setState({ index: state.index + 1 });
+        if(state.index === props.data.data.length - 1){
+        setState({index: 0})
+      } else setState({index: state.index+1})
   };
 
   switch (props.data.status) {

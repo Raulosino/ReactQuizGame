@@ -35,7 +35,9 @@ const GeneralKnowledge = (props) => {
   const goToNext = () => {
 
       document.querySelectorAll('button').forEach(elem => elem.style.backgroundColor = 'blue')
-      setState({index: state.index+1})
+      if(state.index === props.data.data.length - 1){
+        setState({index: 0})
+      } else setState({index: state.index+1})
      
   }
   
