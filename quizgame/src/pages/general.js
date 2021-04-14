@@ -65,11 +65,11 @@ const General = (props) => {
 
   return (
     <>
-      <div class="coin">
-        <div class="side heads">$</div>
-        <div class="side tails">$</div>
+      <div>
+        <div className="coin"></div>
+        <span>{props.data}</span>
       </div>
-      <div>{props.data}</div>
+
       <Switch>
         <Route exact path={path}>
           <div>

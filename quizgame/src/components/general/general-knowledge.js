@@ -50,7 +50,7 @@ const GeneralKnowledge = (props) => {
           return <h2>FAILED</h2>
       case 'SUCCESS':
           return (
-            <>
+            <div className='genKnowledge'>
               <Container className="mt-5">
                 <div className="mainContainer">
                   <div className="headingBox">
@@ -73,7 +73,7 @@ const GeneralKnowledge = (props) => {
                 </div>
               </Container>
               
-            </>
+            </div>
           )
       default: return null
   }
