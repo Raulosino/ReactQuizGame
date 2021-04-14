@@ -34,8 +34,8 @@ const Sports = (props) => {
 
   const goToNext = () => {
     document
-      .querySelectorAll("li")
-      .forEach((elem) => (elem.style.backgroundColor = "white"));
+      .querySelectorAll("button")
+      .forEach((elem) => (elem.style.backgroundColor = "rgb(228, 163, 41)"));
     if (state.index === props.data.data.length - 1) {
       setState({ index: 0 });
     } else setState({ index: state.index + 1 });
