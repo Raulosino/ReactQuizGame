@@ -62,7 +62,7 @@ const GeneralKnowledge = (props) => {
                     </Col>
                     <Col lg={7}className="genContainer">
                       {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) => 
-                        <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="genBtn">{elem}</Button>
+                        <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="genBtn"><span className="text-center" dangerouslySetInnerHTML={{__html: elem}}/></Button>
                       )}
                       <div className=" d-flex justify-content-between mt-5 col-centered">
                         <Link to="/general"><Button className='backBtn'>Back</Button></Link>

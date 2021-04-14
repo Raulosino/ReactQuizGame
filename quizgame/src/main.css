@@ -18,6 +18,7 @@
   margin: 5% auto;
   width: 500px;
   color: black;
+  font-size: 20px;
 }
 .guy {
   background-image: url(../src/img/question-mark-1019820_1920.jpg);
@@ -70,4 +71,5 @@ h2 {
   width: 50px;
   height: 50px;
   background-image: url(../src/img/rsz_1euro-145386_640.png);
+  z-index: 2;
 }
