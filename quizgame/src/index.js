@@ -15,6 +15,9 @@ import General from "./pages/general";
 import Home from "./pages/home";
 import Play from "./pages/play";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './main.css'
+
 const App = () => {
   return (
     <Router>

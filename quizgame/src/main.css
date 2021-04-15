@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.genKnowledge {
+  background-image: url(../src/img/book-2191521_1920.jpg);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.genContainer {
+  background-color: black;
+  height: 350px;
+  width: 800px;
+  margin: 20px 0 0 100px;
+}
+.genBtn {
+  margin: 5% auto;
+  width: 500px;
+  color: black;
+  font-size: 20px;
+  background-color: rgb(228, 163, 41);
+}
+
+.guy {
+  background-image: url(../src/img/imageedit_16_9803829866.png);
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px 0 0 50px;
+}
+.mainContainer {
+  width: 900px;
+  height: 600px;
+  border: 2px solid black;
+  border-radius: 20px 20px;
+  margin: 14% auto;
+  background-color: black;
+  color: rgb(228, 163, 41);
+}
+h2 {
+  margin: 60px 80px 0 80px;
+}
+.headingBox {
+  height: 100px;
+}
+.nextBtn {
+  clip-path: polygon(0 26%, 59% 26%, 59% 5%, 100% 50%, 60% 92%, 59% 71%, 0 71%);
+  height: 50px;
+  width: 80px;
+  padding-right: 75px;
+  font-size: 14px;
+  font-family: "Press Start 2P", cursive;
+  background-color: rgb(228, 163, 41);
+}
+.nextBtn:hover,
+.backBtn:hover,
+.genBtn:hover {
+  background-color: rgb(228, 163, 41);
+}
+
+.backBtn {
+  clip-path: polygon(
+    40% 1%,
+    41% 28%,
+    100% 28%,
+    100% 71%,
+    40% 71%,
+    39% 95%,
+    0% 50%
+  );
+  height: 50px;
+  width: 80px;
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: "Press Start 2P", cursive;
+  background-color: rgb(228, 163, 41);
+}
+.coin {
+  width: 75px;
+  height: 75px;
+  background-image: url(../src/img/rsz_bag-147782_1280.png);
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+.scoreBox {
+  width: 220px;
+  height: 90px;
+  color: rgb(228, 163, 41);
+  background-color: black;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 2;
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  padding-left: 20px;
+  border-radius: 40px 40px;
+}
+.scoreBox div {
+  display: inline-block;
+}
+.score {
+  margin-top: 10px;
+}
+.sports {
+  background-image: url(../src/img/sport-5248625_1920.jpg);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.guySports {
+  background-image: url(../src/img/sportguy.png);
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 0 30px;
+}
+.history {
+  background-image: url(../src/img/map-3409359_1920.jpg);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+.guyHistory {
+  background-image: url(../src/img/imageedit_7_5399820729.png);
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 0 0 30px;
+}
+.home {
+  width: 60vw;
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../src/img/quiz-2074324_1920.png);
+
+  margin: 5% auto;
+}
+.homeBg {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../src/img/nathan-dumlao-J2gEgTPM_OA-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top;
+  position: fixed;
+  top: 0;
+  /* background-color: rgb(134, 73, 30);
+  background-blend-mode: luminosity; */
+}
