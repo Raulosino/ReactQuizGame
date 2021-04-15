@@ -30,7 +30,7 @@ const GeneralKnowledge = (props) => {
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.backgroundColor = 'red'
       })
-
+      props.dispatch(updateScore(-10))
     }
   }
 
