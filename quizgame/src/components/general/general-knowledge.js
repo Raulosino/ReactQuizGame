@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import {getAnswers} from '../getAnswers';
 import {updateScore} from '../../actions'
 
+
 const GeneralKnowledge = (props) => {
 
   const [state, setState] = useState({index: 0})
@@ -13,6 +14,13 @@ const GeneralKnowledge = (props) => {
   console.log(props.data.status);
   
   let index = state.index
+
+  //let winningSound = document.getElementById("winningSound")
+
+  
+
+  let winningSound = new Audio('../../../src/sounds/Game-show-winning.mp3')
+  console.log(winningSound)
 
   let newAnswers = []
 
@@ -25,6 +33,8 @@ const GeneralKnowledge = (props) => {
         document.getElementById(`${elem}`).style.backgroundColor = 'red'
       })
       props.dispatch(updateScore(100))
+      winningSound.play()
+            
     } else {
       document.getElementById(`${props.data.data[index].correct_answer}`).style.backgroundColor = "green"
       props.data.data[index].incorrect_answers.map((elem) => {
@@ -50,7 +60,7 @@ const GeneralKnowledge = (props) => {
           return <h2>FAILED</h2>
       case 'SUCCESS':
           return (
-            <div className='genKnowledge'>
+            <div className='genKnowledgeBg generalBg'>
               <Container className="mt-5">
                 <div className="mainContainer">
                   <div className="headingBox">
@@ -58,7 +68,7 @@ const GeneralKnowledge = (props) => {
                   </div>
                   <Row>
                     <Col lg={3}>
-                      <div className="guy"></div>
+                      <div className="guy guyGenKnowledge"></div>
                     </Col>
                     <Col lg={7}className="genContainer">
                       {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) => 
@@ -66,7 +76,9 @@ const GeneralKnowledge = (props) => {
                       )}
                       <div className=" d-flex justify-content-between mt-5 col-centered">
                         <Link to="/general"><Button className='backBtn'>Back</Button></Link>
-                        <Button onClick={goToNext} className="nextBtn">Next</Button>
+                        <Button onClick={goToNext} className="nextBtn">Next
+                          <audio src="../../../src/sounds/Game-show-winning.mp3" className='clip' id="winningSound"/>
+                        </Button>
                       </div>
                     </Col>
                   </Row>

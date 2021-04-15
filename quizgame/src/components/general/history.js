@@ -51,7 +51,7 @@ const History = (props) => {
       return <h2>FAILED</h2>;
     case "SUCCESS":
       return (
-        <div className='history'>
+        <div className='historyBg generalBg'>
               <Container className="mt-5">
                 <div className="mainContainer">
                   <div className="headingBox">
@@ -59,7 +59,7 @@ const History = (props) => {
                   </div>
                   <Row>
                     <Col lg={3}>
-                      <div className="guyHistory"></div>
+                      <div className="guy guyHistory"></div>
                     </Col>
                     <Col lg={7}className="genContainer">
                       {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) => 

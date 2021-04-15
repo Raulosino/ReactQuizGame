@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-.genKnowledge {
+.genKnowledgeBg {
   background-image: url(../src/img/book-2191521_1920.jpg);
+}
+.generalBg {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -21,9 +23,10 @@
   font-size: 20px;
   background-color: rgb(228, 163, 41);
 }
-
-.guy {
+.guyGenKnowledge {
   background-image: url(../src/img/imageedit_16_9803829866.png);
+}
+.guy {
   width: 300px;
   height: 400px;
   background-size: cover;
@@ -106,39 +109,17 @@ h2 {
 .score {
   margin-top: 10px;
 }
-.sports {
+.sportsBg {
   background-image: url(../src/img/sport-5248625_1920.jpg);
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  position: fixed;
 }
 .guySports {
   background-image: url(../src/img/sportguy.png);
-  width: 300px;
-  height: 400px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0 0 0 30px;
 }
-.history {
+.historyBg {
   background-image: url(../src/img/map-3409359_1920.jpg);
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  position: fixed;
 }
 .guyHistory {
   background-image: url(../src/img/imageedit_7_5399820729.png);
-  width: 300px;
-  height: 400px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0 0 0 30px;
 }
 .home {
   width: 60vw;
@@ -146,31 +127,18 @@ h2 {
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../src/img/quiz-2074324_1920.png);
-
   margin: 5% auto;
 }
 .homeBg {
-  width: 100vw;
-  height: 100vh;
   background-image: url(../src/img/nathan-dumlao-J2gEgTPM_OA-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right top;
-  position: fixed;
-  top: 0;
-  /* background-color: rgb(134, 73, 30);
-  background-blend-mode: luminosity; */
 }
 
-
-.gen-bground{
-  width: 100vw;
-  height: 100vh;
+.gen-bground {
   background-image: url(../src/img/category-homepage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right top;
-  position: fixed;
-  top: 0;
-
 }

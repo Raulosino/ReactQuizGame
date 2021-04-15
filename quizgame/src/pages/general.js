@@ -77,7 +77,7 @@ const General = (props) => {
   ];
 
   return (
-    <div className='gen-bground'>
+    <div className="gen-bground generalBg">
       <div className="scoreBox">
         <div className="coin"></div>
         <div className="score">{props.data}</div>
