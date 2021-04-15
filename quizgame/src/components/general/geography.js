@@ -9,6 +9,7 @@ const Geography = (props) => {
   console.log(props.data.status);
 
   let index = state.index;
+  
 
   let newAnswers = [];
 
