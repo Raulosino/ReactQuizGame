@@ -23,6 +23,7 @@ import Tv from "../components/general/tv";
 import Vehicles from "../components/general/vehicles";
 import Celebrities from "../components/general/celebrities";
 import Sports from "../components/general/sports";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 const General = (props) => {
   const getHistory = () => {
@@ -63,6 +64,18 @@ const General = (props) => {
 
   let { path } = useRouteMatch();
 
+  const categories = [
+    "Celebrities",
+    "Films",
+    "General Knowledge",
+    "Geography",
+    "History",
+    "Music",
+    "Sports",
+    "Television",
+    "Vehicles",
+  ];
+
   return (
     <>
       <div className="scoreBox">
@@ -72,41 +85,67 @@ const General = (props) => {
 
       <Switch>
         <Route exact path={path}>
-          <div>
-            <Link to={`${path}/celebrities`}>
-              {" "}
-              <div onClick={getCelebrity}>Celebrities</div>{" "}
-            </Link>
-            <Link to={`${path}/films`}>
-              <div onClick={getFilms}>Films</div>{" "}
-            </Link>
-            <Link to={`${path}/generalknowledge`}>
-              {" "}
-              <div onClick={getGeneral}>general knowledge</div>{" "}
-            </Link>
-            <Link to={`${path}/geography`}>
-              {" "}
-              <div onClick={getGeo}>Geography</div>{" "}
-            </Link>
-            <Link to={`${path}/history`}>
-              <div onClick={getHistory}>History</div>{" "}
-            </Link>
-            <Link to={`${path}/music`}>
-              <div onClick={getMusic}>Music</div>
-            </Link>
-            <Link to={`${path}/sports`}>
-              <div onClick={getSports}>Sports</div>{" "}
-            </Link>
-            <Link to={`${path}/tv`}>
-              <div onClick={getTv}>Television</div>{" "}
-            </Link>
-            <Link to={`${path}/vehicles`}>
-              <div onClick={getVehicle}>Vehicles</div>{" "}
-            </Link>
+          <Container>
+            <Row>
+              <Col lg={4}>
+                <Link to={`${path}/celebrities`}>
+                  <Card onClick={getCelebrity}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Celebrities</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4}>
+                <Link to={`${path}/films`}>
+                  <Card onClick={getFilms}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Films</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4}>
+                <Link to={`${path}/generalknowledge`}>
+                  {" "}
+                  <Card onClick={getGeneral}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>General Knowledge</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+            </Row>
+            <Row>
+              <Link to={`${path}/geography`}>
+                {" "}
+                <div onClick={getGeo}>Geography</div>{" "}
+              </Link>
+              <Link to={`${path}/history`}>
+                <div onClick={getHistory}>History</div>{" "}
+              </Link>
+              <Link to={`${path}/music`}>
+                <div onClick={getMusic}>Music</div>
+              </Link>
+            </Row>
+            <Row>
+              <Link to={`${path}/sports`}>
+                <div onClick={getSports}>Sports</div>{" "}
+              </Link>
+              <Link to={`${path}/tv`}>
+                <div onClick={getTv}>Television</div>{" "}
+              </Link>
+              <Link to={`${path}/vehicles`}>
+                <div onClick={getVehicle}>Vehicles</div>{" "}
+              </Link>
+            </Row>
             <Link to="/">
               <button type="button">Back to home</button>
             </Link>
-          </div>
+          </Container>
         </Route>
         <Route path={path + "/celebrities"}>
           <Celebrities />
