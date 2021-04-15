@@ -1,14 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-.genKnowledgeBg {
-  background-image: url(../src/img/book-2191521_1920.jpg);
+
+.celebritiesBg {
+  background-image: url(../src/img/celebritiesBg.png);
 }
+.filmsBg {
+  background-image: url(../src/img/filmsBg.jpg);
+}
+.genKnowledgeBg {
+  background-image: url(../src/img/genKnowledgeBg.jpg);
+}
+.geographyBg {
+  background-image: url(../src/img/geographyBg.jpg);
+  background-size: contain;
+}
+.historyBg {
+  background-image: url(../src/img/historyBg.jpg);
+}
+.musicBg {
+  background-image: url(../src/img/musicBg.jpg);
+}
+.sportsBg {
+  background-image: url(../src/img/sportsBg.jpg);
+}
+tvBg{
+
+}
+.vehiclesBg{
+  background-image: url(../src/img/vehicleBg.jpg);
+}
+
+
+.guyCelebrities{
+  background-image: url(../src/img/guyCelebrities.png);
+}
+.guyFilms{
+  background-image: url(../src/img/guyFilms.png)
+}
+.guyGenKnowledge {
+  background-image: url(../src/img/guyGeneral.png);
+}
+.guyGeography {
+  background-image: url(../src/img/guyGeography.png);
+}
+.guyHistory {
+  background-image: url(../src/img/guyHistory.png);
+}
+.guyMusic {
+  background-image: url(../src/img/guyMusic2.png);
+}
+.guySports {
+  background-image: url(../src/img/guySports.png);
+}
+.guyTv{
+  background-image: url(../src/img/guyTv.png)
+}
+.guyVehicles{
+  background-image:url(../src/img/guyVehicles.png)
+}
+
+.guy {
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 10px 0 0 50px;
+}
+
+
 .generalBg {
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   position: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .genContainer {
   background-color: black;
@@ -23,17 +91,8 @@
   font-size: 20px;
   background-color: rgb(228, 163, 41);
 }
-.guyGenKnowledge {
-  background-image: url(../src/img/imageedit_16_9803829866.png);
-}
-.guy {
-  width: 300px;
-  height: 400px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 10px 0 0 50px;
-}
+
+
 .mainContainer {
   width: 900px;
   height: 600px;
@@ -109,18 +168,7 @@ h2 {
 .score {
   margin-top: 10px;
 }
-.sportsBg {
-  background-image: url(../src/img/sport-5248625_1920.jpg);
-}
-.guySports {
-  background-image: url(../src/img/sportguy.png);
-}
-.historyBg {
-  background-image: url(../src/img/map-3409359_1920.jpg);
-}
-.guyHistory {
-  background-image: url(../src/img/imageedit_7_5399820729.png);
-}
+
 .home {
   width: 60vw;
   height: 50vh;

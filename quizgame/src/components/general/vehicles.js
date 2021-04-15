@@ -46,7 +46,7 @@ const Vehicles = (props) => {
       return <h2>FAILED</h2>
     case 'SUCCESS':
       return (
-        <div className='vehicles'>
+        <div className='vehicles vehiclesBg generalBg'>
           <Container className="mt-5">
             <div className="mainContainer">
               <div className="headingBox">
@@ -54,7 +54,7 @@ const Vehicles = (props) => {
               </div>
               <Row>
                 <Col lg={3}>
-                  <div className="guy"></div>
+                  <div className="guy guyVehicles"></div>
                 </Col>
                 <Col lg={7} className="genContainer">
                   {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) =>
