@@ -46,7 +46,7 @@ const Vehicles = (props) => {
       return <h2>FAILED</h2>
     case 'SUCCESS':
       return (
-        <div className='genKnowledge'>
+        <div className='vehicles'>
           <Container className="mt-5">
             <div className="mainContainer">
               <div className="headingBox">

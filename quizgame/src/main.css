@@ -161,3 +161,16 @@ h2 {
   /* background-color: rgb(134, 73, 30);
   background-blend-mode: luminosity; */
 }
+
+
+.gen-bground{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../src/img/category-homepage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top;
+  position: fixed;
+  top: 0;
+
+}

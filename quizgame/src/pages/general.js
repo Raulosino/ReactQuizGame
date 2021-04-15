@@ -77,7 +77,7 @@ const General = (props) => {
   ];
 
   return (
-    <>
+    <div className='gen-bground'>
       <div className="scoreBox">
         <div className="coin"></div>
         <div className="score">{props.data}</div>
@@ -85,7 +85,7 @@ const General = (props) => {
 
       <Switch>
         <Route exact path={path}>
-          <Container>
+          <Container className="mainContainer">
             <Row>
               <Col lg={4}>
                 <Link to={`${path}/celebrities`}>
@@ -120,27 +120,74 @@ const General = (props) => {
               </Col>
             </Row>
             <Row>
-              <Link to={`${path}/geography`}>
-                {" "}
-                <div onClick={getGeo}>Geography</div>{" "}
-              </Link>
-              <Link to={`${path}/history`}>
-                <div onClick={getHistory}>History</div>{" "}
-              </Link>
-              <Link to={`${path}/music`}>
-                <div onClick={getMusic}>Music</div>
-              </Link>
+              <Col lg={4}>
+                <Link to={`${path}/geography`}>
+                  {" "}
+                  <Card onClick={getGeo}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Geography</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4}>
+                <Link to={`${path}/history`}>
+                  {" "}
+                  <Card onClick={getHistory}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>History</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4}>
+                <Link to={`${path}/music`}>
+                  {" "}
+                  <Card onClick={getMusic}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Music</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
             </Row>
             <Row>
-              <Link to={`${path}/sports`}>
-                <div onClick={getSports}>Sports</div>{" "}
-              </Link>
-              <Link to={`${path}/tv`}>
-                <div onClick={getTv}>Television</div>{" "}
-              </Link>
-              <Link to={`${path}/vehicles`}>
-                <div onClick={getVehicle}>Vehicles</div>{" "}
-              </Link>
+              <Col lg={4}>
+                <Link to={`${path}/sports`}>
+                  {" "}
+                  <Card onClick={getSports}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Sports</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4}>
+                <Link to={`${path}/tv`}>
+                  {" "}
+                  <Card onClick={getTv}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Television</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
+              <Col lg={4}>
+                <Link to={`${path}/vehicles`}>
+                  {" "}
+                  <Card onClick={getVehicle}>
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                      <Card.Title>Vehicles</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </Col>
             </Row>
             <Link to="/">
               <button type="button">Back to home</button>
@@ -175,7 +222,7 @@ const General = (props) => {
           <Vehicles />
         </Route>
       </Switch>
-    </>
+    </div>
   );
 };
 
