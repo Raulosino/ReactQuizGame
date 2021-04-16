@@ -23,7 +23,9 @@ import Tv from "../components/general/tv";
 import Vehicles from "../components/general/vehicles";
 import Celebrities from "../components/general/celebrities";
 import Sports from "../components/general/sports";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, div, Container, Row } from "react-bootstrap";
+
+import CelebritiesBg from "../img/celebritiesBg.png";
 
 const General = (props) => {
   const getHistory = () => {
@@ -86,108 +88,90 @@ const General = (props) => {
       <Switch>
         <Route exact path={path}>
           <Container className="mainContainer">
-            <Row>
-              <Col lg={4}>
+            <Row className="d-flex flex-wrap justify-content-around mt-5">
+              <div className="categoryBox">
                 <Link to={`${path}/celebrities`}>
-                  <Card onClick={getCelebrity}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Celebrities</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getCelebrity}>
+                    <img src={CelebritiesBg} width="150" height="90" />
+                    <h3>Celebrities</h3>
+                  </div>
                 </Link>
-              </Col>
-              <Col lg={4}>
+              </div>
+              <div className="categoryBox">
                 <Link to={`${path}/films`}>
-                  <Card onClick={getFilms}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Films</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getFilms}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>Films</h3>
+                  </div>
                 </Link>
-              </Col>
-              <Col lg={4}>
+              </div>
+              <div className="categoryBox">
                 <Link to={`${path}/generalknowledge`}>
                   {" "}
-                  <Card onClick={getGeneral}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>General Knowledge</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getGeneral}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>General</h3>
+                  </div>
                 </Link>
-              </Col>
+              </div>
             </Row>
-            <Row>
-              <Col lg={4}>
+            <Row className="d-flex flex-wrap justify-content-around mt-4">
+              <div className="categoryBox">
                 <Link to={`${path}/geography`}>
                   {" "}
-                  <Card onClick={getGeo}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Geography</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getGeo}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>Geography</h3>
+                  </div>
                 </Link>
-              </Col>
-              <Col lg={4}>
+              </div>
+              <div className="categoryBox">
                 <Link to={`${path}/history`}>
                   {" "}
-                  <Card onClick={getHistory}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>History</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getHistory}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>History</h3>
+                  </div>
                 </Link>
-              </Col>
-              <Col lg={4}>
+              </div>
+              <div className="categoryBox">
                 <Link to={`${path}/music`}>
                   {" "}
-                  <Card onClick={getMusic}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Music</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getMusic}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>Music</h3>
+                  </div>
                 </Link>
-              </Col>
+              </div>
             </Row>
-            <Row>
-              <Col lg={4}>
+            <Row className="d-flex flex-wrap justify-content-around mt-4">
+              <div className="categoryBox">
                 <Link to={`${path}/sports`}>
                   {" "}
-                  <Card onClick={getSports}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Sports</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getSports}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>Sports</h3>
+                  </div>
                 </Link>
-              </Col>
-              <Col lg={4}>
+              </div>
+              <div className="categoryBox">
                 <Link to={`${path}/tv`}>
                   {" "}
-                  <Card onClick={getTv}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Television</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getTv}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>Television</h3>
+                  </div>
                 </Link>
-              </Col>
-              <Col lg={4}>
+              </div>
+              <div className="categoryBox">
                 <Link to={`${path}/vehicles`}>
                   {" "}
-                  <Card onClick={getVehicle}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                      <Card.Title>Vehicles</Card.Title>
-                    </Card.Body>
-                  </Card>
+                  <div onClick={getVehicle}>
+                    <img src="holder.js/100px180" width="150" height="90" />
+                    <h3>Vehicles</h3>
+                  </div>
                 </Link>
-              </Col>
+              </div>
             </Row>
             <Link to="/">
               <button type="button">Back to home</button>
