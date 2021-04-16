@@ -218,3 +218,19 @@ footer {
   color: white;
   padding: 12px;
 }
+.categoryBox {
+  width: 220px;
+  height: 150px;
+  background: rgb(228, 163, 41);
+  border-radius: 20px 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.categoryBox a,
+a:visited {
+  color: black;
+}
+.categoryBox a:hover {
+  text-decoration: none;
+}
