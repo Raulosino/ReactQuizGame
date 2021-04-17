@@ -25,6 +25,7 @@ const Home = () => {
 
   useEffect(() => {
     playing ? audio.play() : audio.pause();
+    audio.volume = 0.1;
   }, [playing]);
 
   useEffect(() => {

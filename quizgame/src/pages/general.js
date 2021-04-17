@@ -34,7 +34,6 @@ import MusicBg from "../img/musicBg.jpg";
 import SportsBg from "../img/sportsBg.jpg";
 import VehiclesBg from "../img/vehicleBg.jpg";
 
-
 const General = (props) => {
   const getHistory = () => {
     props.dispatch(getDataHistory());
@@ -73,18 +72,6 @@ const General = (props) => {
   };
 
   let { path } = useRouteMatch();
-
-  const categories = [
-    "Celebrities",
-    "Films",
-    "General Knowledge",
-    "Geography",
-    "History",
-    "Music",
-    "Sports",
-    "Television",
-    "Vehicles",
-  ];
 
   return (
     <div className="gen-bg generalBg">
