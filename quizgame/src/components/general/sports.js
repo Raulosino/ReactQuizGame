@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { getAnswers } from "../getAnswers";
 import { Link } from "react-router-dom";
 import { updateScore } from "../../actions";
+import winning from "../../sounds/Game-show-winning.mp3";
+import wrong from "../../sounds/Wrong-answer-sound-effect.mp3";
 
 const Sports = (props) => {
   const [state, setState] = useState({ index: 0 });
@@ -12,6 +14,10 @@ const Sports = (props) => {
   console.log(props.data.status);
 
   let index = state.index;
+
+  let winningSound = new Audio(winning);
+
+  let wrongAnswerSound = new Audio(wrong);
 
   let newAnswers = [];
 
@@ -23,7 +29,8 @@ const Sports = (props) => {
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.backgroundColor = "red";
       });
-      props.dispatch(updateScore(100))
+      props.dispatch(updateScore(100));
+      winningSound.play();
     } else {
       document.getElementById(
         `${props.data.data[index].correct_answer}`
@@ -31,6 +38,8 @@ const Sports = (props) => {
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.backgroundColor = "red";
       });
+      props.dispatch(updateScore(-10));
+      wrongAnswerSound.play();
     }
   };
 
