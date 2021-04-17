@@ -8,6 +8,7 @@ import winning from "../../sounds/Game-show-winning.mp3";
 import wrong from "../../sounds/Wrong-answer-sound-effect.mp3";
 
 const Celebrities = (props) => {
+  
   const [state, setState] = useState({ index: 0 });
 
   console.log(props.data.data);
