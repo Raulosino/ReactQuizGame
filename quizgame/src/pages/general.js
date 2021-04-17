@@ -84,7 +84,7 @@ const General = (props) => {
         <Route exact path={path}>
           <Container className="mainContainer generalContainer">
             <Row className="d-flex flex-wrap justify-content-around mt-5">
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/celebrities`}>
                   <div onClick={getCelebrity}>
                     <img src={CelebritiesBg} width="150" height="90" />
@@ -100,7 +100,7 @@ const General = (props) => {
                   </div>
                 </Link>
               </div>
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/generalknowledge`}>
                   {" "}
                   <div onClick={getGeneral}>

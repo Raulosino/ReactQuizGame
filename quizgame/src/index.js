@@ -14,6 +14,7 @@ import Home from "./pages/home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
 import "./buttons.css";
+import "./vanilla-tilt";
 
 const App = () => {
   return (
