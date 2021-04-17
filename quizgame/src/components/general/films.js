@@ -46,18 +46,20 @@ const Films = (props) => {
     let answer = e.currentTarget.id;
     console.log(answer);
     if (answer === props.data.data[index].correct_answer) {
-      document.getElementById(`${answer}`).style.backgroundColor = "green";
+      document.getElementById(`${answer}`).style.background = "green";
       props.data.data[index].incorrect_answers.map((elem) => {
-        document.getElementById(`${elem}`).style.backgroundColor = "red";
+        document.getElementById(`${elem}`).style.background = "red";
       });
       props.dispatch(updateScore(100));
       winningSound.play();
       winningSound.volume = 0.1;
     } else {
-      document.getElementById(`${props.data.data[index].correct_answer}`).style.backgroundColor = "green"
+      document.getElementById(
+        `${props.data.data[index].correct_answer}`
+      ).style.background = "green";
       props.data.data[index].incorrect_answers.map((elem) => {
-        document.getElementById(`${elem}`).style.backgroundColor = 'red'
-      })
+        document.getElementById(`${elem}`).style.background = "red";
+      });
       props.dispatch(updateScore(-10));
       wrongAnswerSound.play();
       wrongAnswerSound.volume = 0.1;
@@ -76,35 +78,54 @@ const Films = (props) => {
   };
 
   switch (props.data.status) {
-    case 'START':
-      return <h2>LOADING...</h2>
-    case 'FAILED':
-      return <h2>FAILED</h2>
-    case 'SUCCESS':
+    case "START":
+      return <h2>LOADING...</h2>;
+    case "FAILED":
+      return <h2>FAILED</h2>;
+    case "SUCCESS":
       return (
-        <div className='genKnowledge filmsBg generalBg'>
+        <div className="genKnowledge celebritiesBg generalBg">
           <Container className="mt-5">
             <div className="mainContainer">
               <div className="headingBox">
-                <h2 className="text-center" dangerouslySetInnerHTML={{ __html: props.data.data[index].question, }} />
+                <h2
+                  className="text-center"
+                  dangerouslySetInnerHTML={{
+                    __html: props.data.data[index].question,
+                  }}
+                />
               </div>
               <Row>
                 <Col lg={3}>
-                  <div className="guy guyFilms"></div>
+                  <div className="guy guyCelebrities"></div>
                 </Col>
                 <Col lg={7} className="genContainer">
-                  {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) =>
-                    <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="genBtn"><span className="text-center" dangerouslySetInnerHTML={{ __html: elem }} /></Button>
-                  )}
-                  <div className=" d-flex justify-content-between mt-5 col-centered">
-                    <Link to="/general"><Button className='backBtn'>Back</Button></Link>
-                    <Button onClick={goToNext} className="nextBtn">Next</Button>
-                  </div>
+                  {
+                    (newAnswers = getAnswers(
+                      props.data.data[index].correct_answer,
+                      props.data.data[index].incorrect_answers
+                    ).map((elem, idx) => (
+                      <button
+                        key={idx}
+                        id={elem}
+                        onClick={(e) => checkAnswer(e)}
+                        block
+                        className="game-button orange outlineBtn"
+                      >
+                        <span
+                          className="text-center"
+                          dangerouslySetInnerHTML={{ __html: elem }}
+                        />
+                      </button>
+                    )))
+                  }
+                  <Button onClick={goToNext} className="" id="nextBtn">
+                    Next
+                  </Button>
                 </Col>
               </Row>
             </div>
           </Container>
-
         <div onClick={askFriend} className="helpBtn" id="askFriend">
             <i class="fas fa-user fa-2x"></i>
           </div>

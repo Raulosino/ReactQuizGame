@@ -83,7 +83,7 @@ const Vehicles = (props) => {
       return <h2>FAILED</h2>;
     case "SUCCESS":
       return (
-        <div className='vehicles vehiclesBg generalBg'>
+        <div className="genKnowledge celebritiesBg generalBg">
           <Container className="mt-5">
             <div className="mainContainer">
               <div className="headingBox">
@@ -96,7 +96,7 @@ const Vehicles = (props) => {
               </div>
               <Row>
                 <Col lg={3}>
-                  <div className="guy guyVehicles"></div>
+                  <div className="guy guyCelebrities"></div>
                 </Col>
                 <Col lg={7} className="genContainer">
                   {
@@ -104,18 +104,18 @@ const Vehicles = (props) => {
                       props.data.data[index].correct_answer,
                       props.data.data[index].incorrect_answers
                     ).map((elem, idx) => (
-                      <Button
+                      <button
                         key={idx}
                         id={elem}
                         onClick={(e) => checkAnswer(e)}
                         block
-                        className="game-button orange"
+                        className="game-button orange outlineBtn"
                       >
                         <span
                           className="text-center"
                           dangerouslySetInnerHTML={{ __html: elem }}
                         />
-                      </Button>
+                      </button>
                     )))
                   }
                   <Button onClick={goToNext} className="" id="nextBtn">

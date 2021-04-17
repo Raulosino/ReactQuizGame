@@ -104,18 +104,18 @@ const GeneralKnowledge = (props) => {
                       props.data.data[index].correct_answer,
                       props.data.data[index].incorrect_answers
                     ).map((elem, idx) => (
-                      <Button
+                      <button
                         key={idx}
                         id={elem}
                         onClick={(e) => checkAnswer(e)}
                         block
-                        className="game-button orange"
+                        className="game-button orange outlineBtn"
                       >
                         <span
                           className="text-center"
                           dangerouslySetInnerHTML={{ __html: elem }}
                         />
-                      </Button>
+                      </button>
                     )))
                   }
                   <Button onClick={goToNext} className="" id="nextBtn">
