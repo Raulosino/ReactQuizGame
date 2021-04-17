@@ -8,6 +8,7 @@ const Home = () => {
 
   const audioPlay = () => {
     soundPlay.play();
+    soundPlay.volume = 0.1;
   };
 
   const [audio] = useState(new Audio(start));

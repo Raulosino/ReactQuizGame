@@ -34,7 +34,16 @@ import MusicBg from "../img/musicBg.jpg";
 import SportsBg from "../img/sportsBg.jpg";
 import VehiclesBg from "../img/vehicleBg.jpg";
 
+import click from "../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
+
 const General = (props) => {
+  const soundPlay = new Audio(click);
+
+  const audioPlay = () => {
+    soundPlay.play();
+    soundPlay.volume = 0.1;
+  };
+
   const getHistory = () => {
     props.dispatch(getDataHistory());
   };
@@ -92,7 +101,7 @@ const General = (props) => {
                   </div>
                 </Link>
               </div>
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/films`}>
                   <div onClick={getFilms}>
                     <img src={FilmsBg} width="150" height="90" />
@@ -111,7 +120,7 @@ const General = (props) => {
               </div>
             </Row>
             <Row className="d-flex flex-wrap justify-content-around mt-4">
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/geography`}>
                   {" "}
                   <div onClick={getGeo}>
@@ -120,7 +129,7 @@ const General = (props) => {
                   </div>
                 </Link>
               </div>
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/history`}>
                   {" "}
                   <div onClick={getHistory}>
@@ -129,7 +138,7 @@ const General = (props) => {
                   </div>
                 </Link>
               </div>
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/music`}>
                   {" "}
                   <div onClick={getMusic}>
@@ -140,7 +149,7 @@ const General = (props) => {
               </div>
             </Row>
             <Row className="d-flex flex-wrap justify-content-around mt-4">
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/sports`}>
                   {" "}
                   <div onClick={getSports}>
@@ -149,7 +158,7 @@ const General = (props) => {
                   </div>
                 </Link>
               </div>
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/tv`}>
                   {" "}
                   <div onClick={getTv}>
@@ -158,7 +167,7 @@ const General = (props) => {
                   </div>
                 </Link>
               </div>
-              <div className="categoryBox">
+              <div className="categoryBox" data-tilt>
                 <Link to={`${path}/vehicles`}>
                   {" "}
                   <div onClick={getVehicle}>
@@ -170,7 +179,9 @@ const General = (props) => {
             </Row>
           </Container>
           <Link to="/">
-            <div className="backBtn">Back to home</div>
+            <div className="backBtn" onClick={audioPlay}>
+              Back to home
+            </div>
           </Link>
         </Route>
         <Route path={path + "/celebrities"}>
