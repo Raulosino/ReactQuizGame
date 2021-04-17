@@ -83,7 +83,7 @@ const Tv = (props) => {
       return <h2>FAILED</h2>;
     case "SUCCESS":
       return (
-        <div className="genKnowledge celebritiesBg generalBg">
+        <div className="genKnowledge tvBg generalBg">
           <Container className="mt-5">
             <div className="mainContainer">
               <div className="headingBox">
@@ -96,7 +96,7 @@ const Tv = (props) => {
               </div>
               <Row>
                 <Col lg={3}>
-                  <div className="guy guyCelebrities"></div>
+                  <div className="guy guyTv"></div>
                 </Col>
                 <Col lg={7} className="genContainer">
                   {
