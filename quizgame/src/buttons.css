@@ -21,15 +21,15 @@ body {
     2px 4px 1px gray, -2px 4px 1px gray;
   border: none;
   margin: 10px 10px 23px;
-  background: repeating-linear-gradient(
+  /*  background: repeating-linear-gradient(
     45deg,
     #3ebbf7,
     #3ebbf7 5px,
     #45b1f4 5px,
     #45b1f4 10px
-  );
+  ); */
   /* border-bottom: 3px solid rgba(16, 91, 146, 0.5); */
-  border-top: 3px solid rgba(255, 255, 255, 0.3);
+  /* border-top: 3px solid rgba(255, 255, 255, 0.3); */
   color: #fff !important;
   border-radius: 8px;
   padding: 8px 15px 10px;
