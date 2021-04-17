@@ -18,6 +18,14 @@ const Home = () => {
     }
   }; */
 
+  const soundPlay = new Audio(
+    "http://dight310.byu.edu/media/audio/FreeLoops.com/5/5/Mouse%20Click%20Fast.wav"
+  );
+
+  const audioPlay = () => {
+    soundPlay.play();
+  };
+
   const [audio] = useState(new Audio(start));
   const [playing, setPlaying] = useState(false);
 
@@ -42,10 +50,14 @@ const Home = () => {
       </div>
       <div className="home"></div>
       <Link to="/general">
-        <button className="playBtn">Play</button>
+        <button className="playBtn" onClick={audioPlay}>
+          Play
+        </button>
       </Link>
       <Link to="/about">
-        <button className="aboutBtn">How to play</button>
+        <button className="aboutBtn" onClick={audioPlay}>
+          How to play
+        </button>
       </Link>
       <footer></footer>
     </div>
