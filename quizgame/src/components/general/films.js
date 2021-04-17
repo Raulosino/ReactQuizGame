@@ -22,6 +22,26 @@ const Films = (props) => {
 
   let newAnswers = [];
 
+  const askFriend = () => {
+    props.data.data[index].incorrect_answers.map((elem) => {
+      document.getElementById(`${elem}`).style.display = "none";
+      document.getElementById(
+        `${props.data.data[index].correct_answer}`
+      ).style.background = "green";
+    });
+    props.dispatch(updateScore(-50));
+  };
+
+  const getHelp = () => {
+    const newArr = [];
+    props.data.data[index].incorrect_answers.map((elem) => {
+      newArr.push(elem);
+    });
+    document.getElementById(`${newArr[0]}`).style.display = "none";
+    document.getElementById(`${newArr[1]}`).style.display = "none";
+    props.dispatch(updateScore(-30));
+  };
+
   const checkAnswer = (e) => {
     let answer = e.currentTarget.id;
     console.log(answer);
@@ -32,6 +52,7 @@ const Films = (props) => {
       });
       props.dispatch(updateScore(100));
       winningSound.play();
+      winningSound.volume = 0.1;
     } else {
       document.getElementById(`${props.data.data[index].correct_answer}`).style.backgroundColor = "green"
       props.data.data[index].incorrect_answers.map((elem) => {
@@ -39,14 +60,19 @@ const Films = (props) => {
       })
       props.dispatch(updateScore(-10));
       wrongAnswerSound.play();
+      wrongAnswerSound.volume = 0.1;
     }
   };
 
   const goToNext = () => {
-    document.querySelectorAll('button').forEach(elem => elem.style.backgroundColor = 'rgb(228, 163, 41)')
+    document.querySelectorAll("button").forEach((elem) => {
+      elem.style.background =
+        "repeating-linear-gradient( 45deg, #ffc800, #ffc800 5px, #ffc200 5px, #ffc200 10px)";
+      elem.style.display = "block";
+    });
     if (state.index === props.data.data.length - 1) {
-      setState({ index: 0 })
-    } else setState({ index: state.index + 1 })
+      setState({ index: 0 });
+    } else setState({ index: state.index + 1 });
   };
 
   switch (props.data.status) {
@@ -79,8 +105,18 @@ const Films = (props) => {
             </div>
           </Container>
 
+        <div onClick={askFriend} className="helpBtn" id="askFriend">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <div onClick={getHelp} className="helpBtn" id="help50">
+            {" "}
+            50/50
+          </div>
+          <Link to="/general">
+            <div className="backBtn">Categories</div>
+          </Link>
         </div>
-      )
+      );
     default:
       return null;
   }
