@@ -26,6 +26,14 @@ import Sports from "../components/general/sports";
 import { Button, Card, div, Container, Row } from "react-bootstrap";
 
 import CelebritiesBg from "../img/celebritiesBg.png";
+import FilmsBg from "../img/filmsBg.jpg";
+import GenKnowledgeBg from "../img/genKnowledgeBg.jpg";
+import GeographyBg from "../img/geographyBg.jpg";
+import HistoryBg from "../img/historyBg.jpg";
+import MusicBg from "../img/musicBg.jpg";
+import SportsBg from "../img/sportsBg.jpg";
+import VehiclesBg from "../img/vehicleBg.jpg";
+
 
 const General = (props) => {
   const getHistory = () => {
@@ -100,7 +108,7 @@ const General = (props) => {
               <div className="categoryBox">
                 <Link to={`${path}/films`}>
                   <div onClick={getFilms}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={FilmsBg} width="150" height="90" />
                     <h3>Films</h3>
                   </div>
                 </Link>
@@ -109,7 +117,7 @@ const General = (props) => {
                 <Link to={`${path}/generalknowledge`}>
                   {" "}
                   <div onClick={getGeneral}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={GenKnowledgeBg} width="150" height="90" />
                     <h3>General</h3>
                   </div>
                 </Link>
@@ -120,7 +128,7 @@ const General = (props) => {
                 <Link to={`${path}/geography`}>
                   {" "}
                   <div onClick={getGeo}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={GeographyBg} width="150" height="90" />
                     <h3>Geography</h3>
                   </div>
                 </Link>
@@ -129,7 +137,7 @@ const General = (props) => {
                 <Link to={`${path}/history`}>
                   {" "}
                   <div onClick={getHistory}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={HistoryBg} width="150" height="90" />
                     <h3>History</h3>
                   </div>
                 </Link>
@@ -138,7 +146,7 @@ const General = (props) => {
                 <Link to={`${path}/music`}>
                   {" "}
                   <div onClick={getMusic}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={MusicBg} width="150" height="90" />
                     <h3>Music</h3>
                   </div>
                 </Link>
@@ -149,7 +157,7 @@ const General = (props) => {
                 <Link to={`${path}/sports`}>
                   {" "}
                   <div onClick={getSports}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={SportsBg} width="150" height="90" />
                     <h3>Sports</h3>
                   </div>
                 </Link>
@@ -158,7 +166,7 @@ const General = (props) => {
                 <Link to={`${path}/tv`}>
                   {" "}
                   <div onClick={getTv}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={GenKnowledgeBg} width="150" height="90" />
                     <h3>Television</h3>
                   </div>
                 </Link>
@@ -167,7 +175,7 @@ const General = (props) => {
                 <Link to={`${path}/vehicles`}>
                   {" "}
                   <div onClick={getVehicle}>
-                    <img src="holder.js/100px180" width="150" height="90" />
+                    <img src={VehiclesBg} width="150" height="90" />
                     <h3>Vehicles</h3>
                   </div>
                 </Link>
