@@ -23,7 +23,7 @@ import Tv from "../components/general/tv";
 import Vehicles from "../components/general/vehicles";
 import Celebrities from "../components/general/celebrities";
 import Sports from "../components/general/sports";
-import { Button, Card, div, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 import CelebritiesBg from "../img/celebritiesBg.png";
 import FilmsBg from "../img/filmsBg.jpg";
@@ -82,7 +82,7 @@ const General = (props) => {
 
       <Switch>
         <Route exact path={path}>
-          <Container className="mainContainer">
+          <Container className="mainContainer generalContainer">
             <Row className="d-flex flex-wrap justify-content-around mt-5">
               <div className="categoryBox">
                 <Link to={`${path}/celebrities`}>
@@ -168,10 +168,10 @@ const General = (props) => {
                 </Link>
               </div>
             </Row>
-            <Link to="/">
-              <button type="button">Back to home</button>
-            </Link>
           </Container>
+          <Link to="/">
+            <div className="backBtn">Back to home</div>
+          </Link>
         </Route>
         <Route path={path + "/celebrities"}>
           <Celebrities />

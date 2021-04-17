@@ -23,7 +23,11 @@
 .sportsBg {
   background-image: url(../src/img/sportsBg.jpg);
 }
-tvBg {
+.tvBg {
+  background-image: url(../src/img/news-644844_1920.jpg);
+  background-color: gold;
+  background-blend-mode: overlay;
+  background-size: cover;
 }
 .vehiclesBg {
   background-image: url(../src/img/vehicleBg.jpg);
@@ -114,42 +118,37 @@ h2 {
 .headingBox {
   height: 100px;
 }
-.nextBtn {
-  clip-path: polygon(0 26%, 59% 26%, 59% 5%, 100% 50%, 60% 92%, 59% 71%, 0 71%);
-  height: 50px;
-  width: 80px;
-  padding-right: 75px;
-  font-size: 14px;
-  font-family: "Press Start 2P", cursive;
-  background-color: rgb(228, 163, 41);
-  outline: none;
+#nextBtn {
+  position: fixed;
+  bottom: 250px;
+  right: 520px;
+  width: 120px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffc800,
+    #ffc800 5px,
+    #ffc200 5px,
+    #ffc200 10px
+  );
+  font-family: "Carter One", sans-serif;
+  font-size: 20px;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 1px black, -2px 2px 1px rgb(26, 24, 24),
+    2px -2px 1px rgb(36, 35, 35), -2px -2px 1px rgb(36, 32, 32),
+    0px 2px 1px black, 0px -2px 1px rgb(5, 5, 5), 0px 4px 1px gray,
+    2px 4px 1px gray, -2px 4px 1px gray;
   border: none;
 }
 .nextBtn:hover,
 .backBtn:hover,
-.genBtn:hover {
+.genBtn:hover,
+.helpBtn:hover {
   background-color: rgb(228, 163, 41);
+  color: black;
+  border: 2px solid black;
 }
 
-.backBtn {
-  clip-path: polygon(
-    40% 1%,
-    41% 28%,
-    100% 28%,
-    100% 71%,
-    40% 71%,
-    39% 95%,
-    0% 50%
-  );
-  height: 50px;
-  width: 80px;
-  padding-left: 20px;
-  font-size: 14px;
-  font-family: "Press Start 2P", cursive;
-  background-color: rgb(228, 163, 41);
-  outline: none;
-  border: none;
-}
 .coin {
   width: 75px;
   height: 75px;
@@ -233,4 +232,73 @@ a:visited {
 }
 .categoryBox a:hover {
   text-decoration: none;
+}
+.helpBtn {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50%;
+  color: rgb(228, 163, 41);
+  font-size: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 15px;
+}
+#askFriend {
+  position: fixed;
+  z-index: 2;
+  right: 300px;
+  display: block;
+  top: 370px;
+}
+#help50 {
+  position: fixed;
+  z-index: 2;
+  right: 300px;
+  display: block;
+  top: 520px;
+  padding-top: 25px;
+  font-weight: bold;
+}
+.backBtn {
+  position: fixed;
+  z-index: 1;
+  left: 100px;
+  bottom: 50px;
+  background-color: black;
+  color: rgb(228, 163, 41);
+  font-size: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 40px 40px;
+}
+.generalContainer {
+  margin-top: 170px;
+}
+.playBtn {
+  width: 300px;
+  height: 80px;
+  font-size: 50px;
+  font-weight: bold;
+  background: url(../src/img/rsz_quiz-2074324_1920.png);
+  display: block;
+  margin: auto;
+  border-radius: 40px 40px;
+  border: #603813 3px solid;
+  color: #603813;
+  text-shadow: black 2px 2px;
+}
+a:hover {
+  text-decoration: none;
+}
+.aboutBtn {
+  background: url(../src/img/rsz_quiz-2074324_1920.png);
+  width: 120px;
+  height: 50px;
+  border-radius: 40px 40px;
+  border: #603813 3px solid;
+  color: #603813;
+  text-shadow: black 1px 1px;
 }

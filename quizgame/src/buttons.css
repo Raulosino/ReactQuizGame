@@ -85,10 +85,10 @@ body {
 .game-button.red {
   background: repeating-linear-gradient(
     45deg,
-    #ff4f4c,
-    #ff4f4c 5px,
-    #ff4643 5px,
-    #ff4643 10px
+    black,
+    black 5px,
+    black 5px,
+    black 10px
   );
   box-shadow: 0 6px 0 #ae2725, 0 8px 1px 1px rgba(0, 0, 0, 0.3),
     0 10px 0 5px #831614, 0 12px 0 5px #a33634, 0 15px 0 5px #631716,

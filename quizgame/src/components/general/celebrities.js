@@ -118,25 +118,23 @@ const Celebrities = (props) => {
                       </Button>
                     )))
                   }
-                  <div className=" d-flex justify-content-between mt-5 col-centered">
-                    <Link to="/general">
-                      <Button className="game-button orange">Back</Button>
-                    </Link>
-                    <Button onClick={goToNext} className="game-button orange">
-                      Next
-                    </Button>
-                    <Button onClick={askFriend} className="game-button orange">
-                      Ask a Friend
-                    </Button>
-                    <Button onClick={getHelp} className="game-button orange">
-                      {" "}
-                      50/50
-                    </Button>
-                  </div>
+                  <Button onClick={goToNext} className="" id="nextBtn">
+                    Next
+                  </Button>
                 </Col>
               </Row>
             </div>
           </Container>
+          <div onClick={askFriend} className="helpBtn" id="askFriend">
+            <i class="fas fa-user fa-2x"></i>
+          </div>
+          <div onClick={getHelp} className="helpBtn" id="help50">
+            {" "}
+            50/50
+          </div>
+          <Link to="/general">
+            <div className="backBtn">Categories</div>
+          </Link>
         </div>
       );
     default:

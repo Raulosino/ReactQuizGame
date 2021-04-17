@@ -41,11 +41,11 @@ const Home = () => {
         {playing ? <i class="fas fa-pause"></i> : <i class="fas fa-play"></i>}
       </div>
       <div className="home"></div>
-      <Link to="/play">
-        <button>Play</button>
+      <Link to="/general">
+        <button className="playBtn">Play</button>
       </Link>
       <Link to="/about">
-        <button>About</button>
+        <button className="aboutBtn">How to play</button>
       </Link>
       <footer></footer>
     </div>
