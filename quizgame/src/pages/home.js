@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import start from "../sounds/sounds_easy.mp3";
+import click from "../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 
 const Home = () => {
-  /* const [state, setState] = useState({ isPlaying: false });
-
-  let startSound = new Audio(start);
-
-  const playMusic = () => {
-    if (state.isPlaying === false) {
-      startSound.play();
-      setState({ isPlaying: true });
-    } else {
-      startSound.pause();
-      startSound.currentTime = 0;
-      setState({ isPlaying: false });
-    }
-  }; */
-
-  const soundPlay = new Audio(
-    "http://dight310.byu.edu/media/audio/FreeLoops.com/5/5/Mouse%20Click%20Fast.wav"
-  );
+  const soundPlay = new Audio(click);
 
   const audioPlay = () => {
     soundPlay.play();

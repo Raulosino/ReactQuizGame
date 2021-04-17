@@ -12,6 +12,7 @@ body {
   text-decoration: none !important;
   outline: none !important;
   width: 500px;
+  height: 50px;
   font-family: "Carter One", sans-serif;
   font-size: 20px;
   line-height: 1.5em;
@@ -21,7 +22,7 @@ body {
     0px 2px 1px black, 0px -2px 1px rgb(5, 5, 5), 0px 4px 1px gray,
     2px 4px 1px gray, -2px 4px 1px gray;
   border: none;
-  margin: 10px 10px 23px;
+  margin: 10px 10px 20px 23px;
   /*  background: repeating-linear-gradient(
     45deg,
     #3ebbf7,
@@ -60,8 +61,6 @@ body {
   top: -3%;
   border-radius: 99px;
 }
-
-
 
 /* Orange buttons */
 
