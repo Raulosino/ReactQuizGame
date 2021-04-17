@@ -16,19 +16,39 @@ const Celebrities = (props) => {
 
   let newAnswers = []
 
+  const askFriend = () => {
+    props.data.data[index].incorrect_answers.map((elem) => {
+      document.getElementById(`${elem}`).style.display = 'none'
+      document.getElementById(`${props.data.data[index].correct_answer}`).style.background = "green"
+    })
+    props.dispatch(updateScore(-50))
+  }
+
+  const getHelp = () => {
+
+    const newArr = [];
+    props.data.data[index].incorrect_answers.map((elem) => {
+      newArr.push(elem)
+    })
+    document.getElementById(`${newArr[0]}`).style.display = 'none';
+    document.getElementById(`${newArr[1]}`).style.display = 'none'
+    props.dispatch(updateScore(-30))
+
+  }
+
   const checkAnswer = (e) => {
     let answer = e.currentTarget.id;
     console.log(answer)
     if (answer === props.data.data[index].correct_answer) {
-      document.getElementById(`${answer}`).style.backgroundColor = "green"
+      document.getElementById(`${answer}`).style.background = "green"
       props.data.data[index].incorrect_answers.map((elem) => {
-        document.getElementById(`${elem}`).style.backgroundColor = 'red'
+        document.getElementById(`${elem}`).style.background = 'red'
       })
       props.dispatch(updateScore(100))
     } else {
-      document.getElementById(`${props.data.data[index].correct_answer}`).style.backgroundColor = "green"
+      document.getElementById(`${props.data.data[index].correct_answer}`).style.background = "green"
       props.data.data[index].incorrect_answers.map((elem) => {
-        document.getElementById(`${elem}`).style.backgroundColor = 'red'
+        document.getElementById(`${elem}`).style.background = 'red'
       })
       props.dispatch(updateScore(-10))
     }
@@ -36,11 +56,13 @@ const Celebrities = (props) => {
 
   const goToNext = () => {
 
-    document.querySelectorAll('button').forEach(elem => elem.style.backgroundColor = 'rgb(228, 163, 41)')
+    document.querySelectorAll('button').forEach(elem => {
+      elem.style.background = 'repeating-linear-gradient( 45deg, #ffc800, #ffc800 5px, #ffc200 5px, #ffc200 10px)'
+      elem.style.display = 'block';
+    })
     if (state.index === props.data.data.length - 1) {
       setState({ index: 0 })
     } else setState({ index: state.index + 1 })
-
   }
 
   switch (props.data.status) {
@@ -62,11 +84,13 @@ const Celebrities = (props) => {
                 </Col>
                 <Col lg={7} className="genContainer">
                   {newAnswers = getAnswers(props.data.data[index].correct_answer, props.data.data[index].incorrect_answers).map((elem, idx) =>
-                    <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="genBtn"><span className="text-center" dangerouslySetInnerHTML={{ __html: elem }} /></Button>
+                    <Button key={idx} id={elem} onClick={(e) => checkAnswer(e)} block className="game-button orange"><span className="text-center" dangerouslySetInnerHTML={{ __html: elem }} /></Button>
                   )}
                   <div className=" d-flex justify-content-between mt-5 col-centered">
-                    <Link to="/general"><Button className='backBtn'>Back</Button></Link>
-                    <Button onClick={goToNext} className="nextBtn">Next</Button>
+                    <Link to="/general"><Button className='game-button orange'>Back</Button></Link>
+                    <Button onClick={goToNext} className="game-button orange">Next</Button>
+                    <Button onClick={askFriend} className="game-button orange">Ask a Friend</Button>
+                    <Button onClick={getHelp} className="game-button orange"> 50/50</Button>
                   </div>
                 </Col>
               </Row>

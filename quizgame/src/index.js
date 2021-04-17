@@ -15,6 +15,9 @@ import Play from "./pages/play";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.css";
+import './buttons.css'
+
+
 
 const App = () => {
   return (
