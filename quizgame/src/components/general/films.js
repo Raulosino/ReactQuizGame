@@ -126,7 +126,7 @@ const Films = (props) => {
               </Row>
             </div>
           </Container>
-          <div onClick={askFriend} className="helpBtn" id="askFriend">
+        <div onClick={askFriend} className="helpBtn" id="askFriend">
             <i class="fas fa-user fa-2x"></i>
           </div>
           <div onClick={getHelp} className="helpBtn" id="help50">

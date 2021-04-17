@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux';
-import { getAnswers } from '../getAnswers';
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { getAnswers } from "../getAnswers";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { updateScore } from '../../actions';
+import { updateScore } from "../../actions";
 import winning from "../../sounds/Game-show-winning.mp3";
 import wrong from "../../sounds/Wrong-answer-sound-effect.mp3";
 
@@ -142,12 +142,11 @@ const History = (props) => {
   }
 };
 
-
 const mapStateToProps = (state) => {
   return {
     data: state.resultHistoryQuestions,
   };
 };
 
+export default connect(mapStateToProps)(History);
 
-export default connect(mapStateToProps)(History)

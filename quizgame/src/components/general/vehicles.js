@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import { getAnswers } from "../getAnswers";
-import { updateScore } from '../../actions';
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { updateScore } from "../../actions";
+import { Link } from "react-router-dom";
 import winning from "../../sounds/Game-show-winning.mp3";
 import wrong from "../../sounds/Wrong-answer-sound-effect.mp3";
 
