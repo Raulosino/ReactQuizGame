@@ -140,9 +140,12 @@ h2 {
     0px 2px 1px black, 0px -2px 1px rgb(5, 5, 5), 0px 4px 1px gray,
     2px 4px 1px gray, -2px 4px 1px gray;
   border: none;
-
 }
-#nextBtn:focus, #nextBtn:active,.outlineBtn:focus, .outlineBtn:active{
+
+#nextBtn:focus,
+#nextBtn:active,
+.outlineBtn:focus,
+.outlineBtn:active {
   outline: none !important;
   box-shadow: none;
 }
