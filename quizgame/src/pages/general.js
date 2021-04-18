@@ -33,6 +33,7 @@ import HistoryBg from "../img/historyBg.jpg";
 import MusicBg from "../img/musicBg.jpg";
 import SportsBg from "../img/sportsBg.jpg";
 import VehiclesBg from "../img/vehicleBg.jpg";
+import TvBg from "../img/game-5553619_1280.png";
 
 import click from "../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 
@@ -165,7 +166,7 @@ const General = (props) => {
                 <Link to={`${path}/tv`}>
                   {" "}
                   <div onClick={getTv}>
-                    <img src={GenKnowledgeBg} width="150" height="90" />
+                    <img src={TvBg} width="150" height="90" />
                     <h3>Television</h3>
                   </div>
                 </Link>
