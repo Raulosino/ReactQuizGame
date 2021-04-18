@@ -17,22 +17,26 @@ import "./buttons.css";
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/general">
-          <General />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      {/*main Routing */}
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/general">
+            <General />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 };
 
+//creating Redux store and using Redux Thunk
 ReactDOM.render(
   <Provider store={createStore(reducers, applyMiddleware(thunk))}>
     <App />

@@ -1,3 +1,5 @@
+//function which takes a string and an array and returns an array with shuffled elements
+//used to shuffle the correct and incorrect answers before displaying them
 export const getAnswers = (str, arr) => {
   let newArr = [];
   newArr.push(str, ...arr);

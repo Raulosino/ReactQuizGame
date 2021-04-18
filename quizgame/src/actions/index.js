@@ -10,6 +10,7 @@ import {
   getFilms,
 } from "../api";
 
+//action for getting general knowledge data
 export const getDataGeneral = () => {
   return (dispatch) => {
     dispatch({
@@ -33,6 +34,7 @@ export const getDataGeneral = () => {
   };
 };
 
+//action for getting geography data
 export const getDataGeography = () => {
   return (dispatch) => {
     dispatch({
@@ -56,6 +58,7 @@ export const getDataGeography = () => {
   };
 };
 
+//action for getting celebrities data
 export const getDataCelebrities = () => {
   return (dispatch) => {
     dispatch({
@@ -79,6 +82,7 @@ export const getDataCelebrities = () => {
   };
 };
 
+//action for getting history data
 export const getDataHistory = () => {
   return (dispatch) => {
     dispatch({
@@ -102,6 +106,7 @@ export const getDataHistory = () => {
   };
 };
 
+//action for getting sports data
 export const getDataSports = () => {
   return (dispatch) => {
     dispatch({
@@ -125,6 +130,7 @@ export const getDataSports = () => {
   };
 };
 
+//action for getting television data
 export const getDataTv = () => {
   return (dispatch) => {
     dispatch({
@@ -148,6 +154,7 @@ export const getDataTv = () => {
   };
 };
 
+//action for getting vehicles data
 export const getDataVehicle = () => {
   return (dispatch) => {
     dispatch({
@@ -171,6 +178,7 @@ export const getDataVehicle = () => {
   };
 };
 
+//action for getting music data
 export const getDataMusic = () => {
   return (dispatch) => {
     dispatch({
@@ -194,6 +202,7 @@ export const getDataMusic = () => {
   };
 };
 
+//action for getting films data
 export const getDataFilms = () => {
   return (dispatch) => {
     dispatch({
@@ -217,6 +226,7 @@ export const getDataFilms = () => {
   };
 };
 
+//action for updating the score
 export const updateScore = (score) => {
   return {
     type: "UPDATE_SCORE",

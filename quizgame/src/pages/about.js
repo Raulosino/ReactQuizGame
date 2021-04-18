@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import click from "../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 
 const About = () => {
+  //declaring sound variables
   const soundPlay = new Audio(click);
 
   const audioPlay = () => {
@@ -47,12 +48,14 @@ const About = () => {
         <h3>
           <span>LET'S GET QUIZZICLE!</span>
         </h3>
+        {/*play button */}
         <Link to="/general">
           <button className="playBtn mt-5" onClick={audioPlay}>
             Play
           </button>
         </Link>
       </div>
+      {/*back to home button*/}
       <Link to="/">
         <button type="button" className="backBtn" onClick={audioPlay}>
           Back to home

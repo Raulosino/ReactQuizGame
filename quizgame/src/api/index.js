@@ -1,5 +1,4 @@
-const apiKey = process.env.REACT_APP_API_KEY;
-
+//fetching general knowledge data
 export const getGeneralKnowledge = () => {
   return new Promise((resolve, reject) => {
     fetch(
@@ -26,6 +25,7 @@ export const getGeneralKnowledge = () => {
   });
 };
 
+//fetching celebrities data
 export const getCelebrities = () => {
   return new Promise((resolve, reject) => {
     fetch("https://opentdb.com/api.php?amount=13&category=26&difficulty=easy")
@@ -49,6 +49,7 @@ export const getCelebrities = () => {
   });
 };
 
+//fetching films data
 export const getFilms = () => {
   return new Promise((resolve, reject) => {
     fetch(
@@ -74,6 +75,7 @@ export const getFilms = () => {
   });
 };
 
+//fetching geography data
 export const getGeography = () => {
   return new Promise((resolve, reject) => {
     fetch(
@@ -99,6 +101,7 @@ export const getGeography = () => {
   });
 };
 
+//fetching history data
 export const getHistory = () => {
   return new Promise((resolve, reject) => {
     fetch(
@@ -124,6 +127,7 @@ export const getHistory = () => {
   });
 };
 
+//fetching music data
 export const getMusic = () => {
   return new Promise((resolve, reject) => {
     fetch(
@@ -149,6 +153,7 @@ export const getMusic = () => {
   });
 };
 
+//fetching sports data
 export const getSports = () => {
   return new Promise((resolve, reject) => {
     fetch(
@@ -174,6 +179,7 @@ export const getSports = () => {
   });
 };
 
+//fetching television data
 export const getTv = () => {
   return new Promise((resolve, reject) => {
     fetch(
@@ -199,6 +205,7 @@ export const getTv = () => {
   });
 };
 
+//fetching vehicles data
 export const getVehicles = () => {
   return new Promise((resolve, reject) => {
     fetch(

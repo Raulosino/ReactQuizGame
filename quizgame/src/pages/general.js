@@ -37,6 +37,7 @@ import VehiclesBg from "../img/vehicleBg.jpg";
 import click from "../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 
 const General = (props) => {
+  //declaring sound variables
   const soundPlay = new Audio(click);
 
   const audioPlay = () => {
@@ -44,6 +45,7 @@ const General = (props) => {
     soundPlay.volume = 0.1;
   };
 
+  //functions to dispatch actions
   const getHistory = () => {
     props.dispatch(getDataHistory());
   };
@@ -89,6 +91,7 @@ const General = (props) => {
         <div className="score">{props.data}</div>
       </div>
 
+      {/*subrouting  */}
       <Switch>
         <Route exact path={path}>
           <Container className="mainContainer generalContainer">
@@ -216,10 +219,12 @@ const General = (props) => {
   );
 };
 
+//using mapStateToProps to get the data from the Redux store
 const mapStateToProps = (state) => {
   return {
     data: state.resultScore,
   };
 };
 
+//connect the component with the Redux store
 export default connect(mapStateToProps)(General);

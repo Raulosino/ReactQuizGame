@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+/* background images */
+
 .celebritiesBg {
   background-image: url(../src/img/celebritiesBg.png);
 }
@@ -46,6 +48,8 @@
   background-position: center;
 }
 
+/*little guy images*/
+
 .guyCelebrities {
   background-image: url(../src/img/guyCelebrities.png);
 }
@@ -74,6 +78,7 @@
   background-image: url(../src/img/guyVehicles.png);
 }
 
+/*main class for the little guy*/
 .guy {
   width: 300px;
   height: 400px;
@@ -83,6 +88,7 @@
   margin: 10px 0 0 50px;
 }
 
+/*general class for backgrounds */
 .generalBg {
   width: 100vw;
   height: 100vh;
@@ -92,30 +98,16 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/*the answers container*/
 .genContainer {
   background-color: black;
   height: 350px;
   width: 800px;
   margin: 20px 0 0 100px;
 }
-.genBtn {
-  margin: 5% auto;
-  width: 500px;
-  color: black;
-  font-size: 20px;
-  background-color: rgb(228, 163, 41);
-  outline: none;
-  border: none;
-}
 
-.genBtn:focus,
-.genBtn:active {
-  outline: 0;
-  outline-color: transparent;
-  box-shadow: none;
-  border: none;
-}
-
+/*general main container*/
 .mainContainer {
   width: 900px;
   height: 600px;
@@ -125,6 +117,8 @@
   background-color: black;
   color: rgb(228, 163, 41);
 }
+
+/*main container about page*/
 .aboutContainer {
   width: 700px;
   height: 580px;
@@ -135,6 +129,8 @@
   color: rgb(228, 163, 41);
   padding: 30px 70px;
 }
+
+/*list about page*/
 .aboutContainer ul {
   text-align: justify;
   margin-left: 80px;
@@ -149,6 +145,8 @@ h2 {
 .headingBox {
   height: 100px;
 }
+
+/*next button styles*/
 #nextBtn {
   position: fixed;
   outline: none !important;
@@ -189,6 +187,7 @@ h2 {
   border: 2px solid black;
 }
 
+/*score box styles*/
 .coin {
   width: 75px;
   height: 75px;
@@ -218,6 +217,7 @@ h2 {
   margin-top: 10px;
 }
 
+/*home page background*/
 .home {
   width: 60vw;
   height: 50vh;
@@ -226,6 +226,8 @@ h2 {
   background-image: url(../src/img/quiz-2074324_1920.png);
   margin: 5% auto;
 }
+
+/*home page main background*/
 .homeBg {
   background-image: url(../src/img/nathan-dumlao-J2gEgTPM_OA-unsplash.jpg);
   background-size: cover;
@@ -233,6 +235,7 @@ h2 {
   background-position: right top;
 }
 
+/*general page background*/
 .gen-bg {
   background-image: url(../src/img/category-homepage.jpg);
   background-size: cover;
@@ -247,6 +250,8 @@ footer {
   bottom: 0;
   line-height: 0.5;
 }
+
+/*box for the audio*/
 .playBox {
   width: 50px;
   height: 50px;
@@ -258,6 +263,8 @@ footer {
   color: white;
   padding: 12px;
 }
+
+/*the box for categories*/
 .categoryBox {
   width: 220px;
   height: 150px;
@@ -274,6 +281,8 @@ a:visited {
 .categoryBox a:hover {
   text-decoration: none;
 }
+
+/*general helping options button*/
 .helpBtn {
   width: 100px;
   height: 100px;
@@ -285,6 +294,8 @@ a:visited {
   box-sizing: border-box;
   padding: 15px;
 }
+
+/*ask a friend*/
 #askFriend {
   position: fixed;
   z-index: 2;
@@ -292,6 +303,8 @@ a:visited {
   display: block;
   top: 370px;
 }
+
+/*50/50*/
 #help50 {
   position: fixed;
   z-index: 2;
@@ -301,6 +314,8 @@ a:visited {
   padding-top: 25px;
   font-weight: bold;
 }
+
+/*back button*/
 .backBtn {
   position: fixed;
   z-index: 1;
@@ -318,6 +333,8 @@ a:visited {
 .generalContainer {
   margin-top: 170px;
 }
+
+/* play button*/
 .playBtn {
   width: 300px;
   height: 80px;
@@ -335,6 +352,8 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
+
+/*going to about page button*/
 .aboutBtn {
   background: url(../src/img/rsz_quiz-2074324_1920.png);
   width: 120px;
