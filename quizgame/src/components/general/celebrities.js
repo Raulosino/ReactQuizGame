@@ -10,7 +10,7 @@ import wrong from "../../sounds/Wrong-answer-sound-effect.mp3";
 import click from "../../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 
 const Celebrities = (props) => {
-    //declaring the state for the index
+  //declaring the state for the index
 
   const [state, setState] = useState({ index: 0 });
 
@@ -124,7 +124,7 @@ const Celebrities = (props) => {
                   </Col>
                   <Col lg={7} className="genContainer">
                     {
-                    //map through the array with both correct and incorrect answers and display them randomly
+                      //map through the array with both correct and incorrect answers and display them randomly
                       (newAnswers = getAnswers(
                         props.data.data[index].correct_answer,
                         props.data.data[index].incorrect_answers
