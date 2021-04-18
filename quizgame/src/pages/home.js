@@ -34,17 +34,30 @@ const Home = () => {
         {playing ? <i class="fas fa-pause"></i> : <i class="fas fa-play"></i>}
       </div>
       <div className="home"></div>
+      <h1>LET'S GET QUIZZICLE!</h1>
       <Link to="/general">
         <button className="playBtn" onClick={audioPlay}>
           Play
         </button>
       </Link>
       <Link to="/about">
-        <button className="aboutBtn" onClick={audioPlay}>
+        <button className="aboutBtn mt-3" onClick={audioPlay}>
           How to play
         </button>
       </Link>
-      <footer></footer>
+      <footer>
+        <p>
+          &copy; Made with{" "}
+          <span className="heart">
+            <i class="fas fa-heart"></i>
+          </span>{" "}
+          for React 2021. All Rights Reserved.
+        </p>
+        <p>
+          by Mariana Pantelic, Abdullah Haidar, Heriberto Rodriguez, Raul
+          Eduarte
+        </p>
+      </footer>
     </div>
   );
 };

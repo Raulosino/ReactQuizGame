@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
 import { getAnswers } from "../getAnswers";
 import { Button, Col, Container, Row } from "react-bootstrap";
@@ -11,7 +11,6 @@ import click from "../../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 
 const Celebrities = (props) => {
   const [state, setState] = useState({ index: 0 });
-  const [click, setClick] = useState({ clicked: false });
 
   console.log(props.data.data);
   console.log(props.data.status);
@@ -58,8 +57,11 @@ const Celebrities = (props) => {
     console.log(answer);
     if (answer === props.data.data[index].correct_answer) {
       document.getElementById(`${answer}`).style.background = "green";
+      document.getElementById(`${answer}`).disabled = true;
+
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.background = "red";
+        document.getElementById(`${elem}`).disabled = true;
       });
       props.dispatch(updateScore(100));
       winningSound.play();
@@ -75,7 +77,6 @@ const Celebrities = (props) => {
       wrongAnswerSound.play();
       wrongAnswerSound.volume = 0.1;
     }
-    setClick({ clicked: true });
   };
 
   const goToNext = () => {
@@ -88,7 +89,6 @@ const Celebrities = (props) => {
     if (state.index === props.data.data.length - 1) {
       setState({ index: 0 });
     } else setState({ index: state.index + 1 });
-    setClick({ clicked: false });
   };
 
   switch (props.data.status) {
@@ -98,61 +98,62 @@ const Celebrities = (props) => {
       return <h2>FAILED</h2>;
     case "SUCCESS":
       return (
-        <div className="genKnowledge celebritiesBg generalBg">
-          <Container className="mt-5">
-            <div className="mainContainer">
-              <div className="headingBox">
-                <h2
-                  className="text-center"
-                  dangerouslySetInnerHTML={{
-                    __html: props.data.data[index].question,
-                  }}
-                />
+        <div className="celebritiesGenBg generalBg">
+          <div className="genKnowledge celebritiesBg generalBg">
+            <Container className="mt-5">
+              <div className="mainContainer">
+                <div className="headingBox">
+                  <h2
+                    className="text-center"
+                    dangerouslySetInnerHTML={{
+                      __html: props.data.data[index].question,
+                    }}
+                  />
+                </div>
+                <Row>
+                  <Col lg={3}>
+                    <div className="guy guyCelebrities"></div>
+                  </Col>
+                  <Col lg={7} className="genContainer">
+                    {
+                      (newAnswers = getAnswers(
+                        props.data.data[index].correct_answer,
+                        props.data.data[index].incorrect_answers
+                      ).map((elem, idx) => (
+                        <button
+                          key={idx}
+                          id={elem}
+                          onClick={(e) => checkAnswer(e)}
+                          block
+                          className="game-button orange outlineBtn"
+                        >
+                          <span
+                            className="text-center"
+                            dangerouslySetInnerHTML={{ __html: elem }}
+                          />
+                        </button>
+                      )))
+                    }
+                    <Button onClick={goToNext} id="nextBtn">
+                      Next
+                    </Button>
+                  </Col>
+                </Row>
               </div>
-              <Row>
-                <Col lg={3}>
-                  <div className="guy guyCelebrities"></div>
-                </Col>
-                <Col lg={7} className="genContainer">
-                  {
-                    (newAnswers = getAnswers(
-                      props.data.data[index].correct_answer,
-                      props.data.data[index].incorrect_answers
-                    ).map((elem, idx) => (
-                      <button
-                        disabled={click.clicked}
-                        key={idx}
-                        id={elem}
-                        onClick={(e) => checkAnswer(e)}
-                        block
-                        className="game-button orange outlineBtn"
-                      >
-                        <span
-                          className="text-center"
-                          dangerouslySetInnerHTML={{ __html: elem }}
-                        />
-                      </button>
-                    )))
-                  }
-                  <Button onClick={goToNext} className="" id="nextBtn">
-                    Next
-                  </Button>
-                </Col>
-              </Row>
+            </Container>
+            <div onClick={askFriend} className="helpBtn" id="askFriend">
+              <i class="fas fa-user fa-2x"></i>
             </div>
-          </Container>
-          <div onClick={askFriend} className="helpBtn" id="askFriend">
-            <i class="fas fa-user fa-2x"></i>
-          </div>
-          <div onClick={getHelp} className="helpBtn" id="help50">
-            {" "}
-            50/50
-          </div>
-          <Link to="/general">
-            <div className="backBtn" onClick={audioPlay}>
-              Categories
+            <div onClick={getHelp} className="helpBtn" id="help50">
+              {" "}
+              50/50
             </div>
-          </Link>
+            <Link to="/general">
+              <div className="backBtn" onClick={audioPlay}>
+                Categories
+              </div>
+            </Link>
+          </div>
         </div>
       );
     default:

@@ -2,7 +2,9 @@
 
 .celebritiesBg {
   background-image: url(../src/img/celebritiesBg.png);
-  background-color: rgb(202, 162, 87);
+}
+.celebritiesGenBg {
+  background-image: url(../src/img/background-5994809_1920.jpg);
 }
 .filmsBg {
   background-image: url(../src/img/filmsBg.jpg);
@@ -24,13 +26,24 @@
   background-image: url(../src/img/sportsBg.jpg);
 }
 .tvBg {
-  background-image: url(../src/img/news-644844_1920.jpg);
+  background-image: url();
   background-color: gold;
   background-blend-mode: overlay;
   background-size: cover;
 }
 .vehiclesBg {
   background-image: url(../src/img/vehicleBg.jpg);
+}
+.aboutBg {
+  background-image: url(../src/img/nathan-dumlao-J2gEgTPM_OA-unsplash.jpg);
+}
+.quizImg {
+  margin: 1% auto;
+  width: 60vw;
+  height: 30vh;
+  background-image: url(../src/img/rsz_quiz-6064477_1280.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .guyCelebrities {
@@ -112,8 +125,26 @@
   background-color: black;
   color: rgb(228, 163, 41);
 }
+.aboutContainer {
+  width: 700px;
+  height: 580px;
+  border: 2px solid black;
+  border-radius: 20px 20px;
+  margin: 2% auto;
+  background-color: black;
+  color: rgb(228, 163, 41);
+  padding: 30px 70px;
+}
+.aboutContainer ul {
+  text-align: justify;
+  margin-left: 80px;
+}
 h2 {
   margin: 60px 80px 0 80px;
+}
+.aboutContainer span {
+  color: white;
+  font-weight: bold;
 }
 .headingBox {
   height: 100px;
@@ -209,11 +240,12 @@ h2 {
   background-position: right top;
 }
 footer {
-  padding: 50px;
+  padding: 30px;
   width: 100%;
   background-color: #c79c7196;
   position: fixed;
   bottom: 0;
+  line-height: 0.5;
 }
 .playBox {
   width: 50px;
@@ -294,6 +326,7 @@ a:visited {
   background: url(../src/img/rsz_quiz-2074324_1920.png);
   display: block;
   margin: auto;
+  margin-top: 3%;
   border-radius: 40px 40px;
   border: #603813 3px solid;
   color: #603813;
@@ -310,4 +343,14 @@ a:hover {
   border: #603813 3px solid;
   color: #603813;
   text-shadow: black 1px 1px;
+}
+
+h1 {
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  margin-top: -150px;
+}
+.heart {
+  color: red;
 }
