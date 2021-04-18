@@ -72,11 +72,8 @@ const Celebrities = (props) => {
     console.log(answer);
     if (answer === props.data.data[index].correct_answer) {
       document.getElementById(`${answer}`).style.background = "green";
-      document.getElementById(`${answer}`).disabled = true;
-
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.background = "red";
-        document.getElementById(`${elem}`).disabled = true;
         return elem;
       });
       props.dispatch(updateScore(100));

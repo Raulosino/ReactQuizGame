@@ -1,3 +1,37 @@
+![Result](./src/img/2021-04-18T21-51-23.gif)
+
+# Final Project React - QUIZ GAME
+
+This is a Team Project, a Quiz Game with 9 categories: General Knowledge, Celebrities, Films, History, Geography, Music, Sports, Television and Vehicles
+
+- Questions with multiple choice answers
+
+- Scoring System
+
+- Help Options
+
+- Sound Effects
+
+[API Reference](https://opentdb.com/api_config.php)
+
+#### Libraries used:
+
+- React
+
+- React Router DOM
+
+- ReactDOM
+
+- Redux
+
+- Redux-Thunk
+
+- React Bootstrap
+
+- Bootstrap
+
+- Font Awesome
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
