@@ -28,10 +28,7 @@
   background-image: url(../src/img/sportsBg.jpg);
 }
 .tvBg {
-  background-image: url();
-  background-color: gold;
-  background-blend-mode: overlay;
-  background-size: cover;
+  background-image: url(../src/img/game-5553619_1280.png);
 }
 .vehiclesBg {
   background-image: url(../src/img/vehicleBg.jpg);
@@ -353,7 +350,7 @@ a:hover {
   text-decoration: none;
 }
 
-/*going to about page button*/
+/*going to about page*/
 .aboutBtn {
   background: url(../src/img/rsz_quiz-2074324_1920.png);
   width: 120px;
