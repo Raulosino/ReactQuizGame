@@ -33,7 +33,7 @@ import HistoryBg from "../img/historyBg.jpg";
 import MusicBg from "../img/musicBg.jpg";
 import SportsBg from "../img/sportsBg.jpg";
 import VehiclesBg from "../img/vehicleBg.jpg";
-import TvBg from "../img/game-5553619_1280.png";
+import TvBg from "../img/tv-627876_1280.jpg";
 
 import click from "../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 

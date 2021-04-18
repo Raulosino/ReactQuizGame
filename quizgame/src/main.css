@@ -28,7 +28,8 @@
   background-image: url(../src/img/sportsBg.jpg);
 }
 .tvBg {
-  background-image: url(../src/img/game-5553619_1280.png);
+  background-image: url(../src/img/tv-627876_1280.jpg);
+  background-position: right;
 }
 .vehiclesBg {
   background-image: url(../src/img/vehicleBg.jpg);
