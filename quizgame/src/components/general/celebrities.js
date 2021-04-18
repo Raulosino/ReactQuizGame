@@ -11,6 +11,7 @@ import click from "../../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
 
 const Celebrities = (props) => {
   const [state, setState] = useState({ index: 0 });
+  const [click, setClick] = useState({ clicked: false });
 
   console.log(props.data.data);
   console.log(props.data.status);
@@ -74,6 +75,7 @@ const Celebrities = (props) => {
       wrongAnswerSound.play();
       wrongAnswerSound.volume = 0.1;
     }
+    setClick({ clicked: true });
   };
 
   const goToNext = () => {
@@ -86,6 +88,7 @@ const Celebrities = (props) => {
     if (state.index === props.data.data.length - 1) {
       setState({ index: 0 });
     } else setState({ index: state.index + 1 });
+    setClick({ clicked: false });
   };
 
   switch (props.data.status) {
@@ -117,6 +120,7 @@ const Celebrities = (props) => {
                       props.data.data[index].incorrect_answers
                     ).map((elem, idx) => (
                       <button
+                        disabled={click.clicked}
                         key={idx}
                         id={elem}
                         onClick={(e) => checkAnswer(e)}

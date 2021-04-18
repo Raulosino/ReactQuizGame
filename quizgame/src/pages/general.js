@@ -27,7 +27,7 @@ import { Container, Row } from "react-bootstrap";
 
 import CelebritiesBg from "../img/celebritiesBg.png";
 import FilmsBg from "../img/filmsBg.jpg";
-import GenKnowledgeBg from "../img/genKnowledgeBg.jpg";
+import GenKnowledgeBg from "../img/books-2818949_1920.jpg";
 import GeographyBg from "../img/geographyBg.jpg";
 import HistoryBg from "../img/historyBg.jpg";
 import MusicBg from "../img/musicBg.jpg";
