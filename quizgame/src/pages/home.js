@@ -21,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     playing ? audio.play() : audio.pause();
     audio.volume = 0.1;
-  }, [playing]);
+  }, [playing, audio]);
 
   //used useEffect to render just once when the browser loads
   useEffect(() => {
@@ -29,7 +29,7 @@ const Home = () => {
     return () => {
       audio.removeEventListener("ended", () => setPlaying(false));
     };
-  }, []);
+  }, [audio]);
 
   return (
     <div className="homeBg generalBg">

@@ -100,7 +100,12 @@ const General = (props) => {
               <div className="categoryBox" data-tilt>
                 <Link to={`${path}/celebrities`}>
                   <div onClick={getCelebrity}>
-                    <img src={CelebritiesBg} width="150" height="90" />
+                    <img
+                      src={CelebritiesBg}
+                      width="150"
+                      height="90"
+                      alt="Red Carpet"
+                    />
                     <h3>Celebrities</h3>
                   </div>
                 </Link>
@@ -108,7 +113,7 @@ const General = (props) => {
               <div className="categoryBox" data-tilt>
                 <Link to={`${path}/films`}>
                   <div onClick={getFilms}>
-                    <img src={FilmsBg} width="150" height="90" />
+                    <img src={FilmsBg} width="150" height="90" alt="Films" />
                     <h3>Films</h3>
                   </div>
                 </Link>
@@ -117,7 +122,12 @@ const General = (props) => {
                 <Link to={`${path}/generalknowledge`}>
                   {" "}
                   <div onClick={getGeneral}>
-                    <img src={GenKnowledgeBg} width="150" height="90" />
+                    <img
+                      src={GenKnowledgeBg}
+                      width="150"
+                      height="90"
+                      alt="Books"
+                    />
                     <h3>General</h3>
                   </div>
                 </Link>
@@ -128,7 +138,12 @@ const General = (props) => {
                 <Link to={`${path}/geography`}>
                   {" "}
                   <div onClick={getGeo}>
-                    <img src={GeographyBg} width="150" height="90" />
+                    <img
+                      src={GeographyBg}
+                      width="150"
+                      height="90"
+                      alt="World map"
+                    />
                     <h3>Geography</h3>
                   </div>
                 </Link>
@@ -137,7 +152,12 @@ const General = (props) => {
                 <Link to={`${path}/history`}>
                   {" "}
                   <div onClick={getHistory}>
-                    <img src={HistoryBg} width="150" height="90" />
+                    <img
+                      src={HistoryBg}
+                      width="150"
+                      height="90"
+                      alt="History"
+                    />
                     <h3>History</h3>
                   </div>
                 </Link>
@@ -146,7 +166,7 @@ const General = (props) => {
                 <Link to={`${path}/music`}>
                   {" "}
                   <div onClick={getMusic}>
-                    <img src={MusicBg} width="150" height="90" />
+                    <img src={MusicBg} width="150" height="90" alt="Music" />
                     <h3>Music</h3>
                   </div>
                 </Link>
@@ -157,7 +177,12 @@ const General = (props) => {
                 <Link to={`${path}/sports`}>
                   {" "}
                   <div onClick={getSports}>
-                    <img src={SportsBg} width="150" height="90" />
+                    <img
+                      src={SportsBg}
+                      width="150"
+                      height="90"
+                      alt="Sport balls"
+                    />
                     <h3>Sports</h3>
                   </div>
                 </Link>
@@ -166,7 +191,12 @@ const General = (props) => {
                 <Link to={`${path}/tv`}>
                   {" "}
                   <div onClick={getTv}>
-                    <img src={TvBg} width="150" height="90" />
+                    <img
+                      src={TvBg}
+                      width="150"
+                      height="90"
+                      alt="Big screen Tv"
+                    />
                     <h3>Television</h3>
                   </div>
                 </Link>
@@ -175,7 +205,12 @@ const General = (props) => {
                 <Link to={`${path}/vehicles`}>
                   {" "}
                   <div onClick={getVehicle}>
-                    <img src={VehiclesBg} width="150" height="90" />
+                    <img
+                      src={VehiclesBg}
+                      width="150"
+                      height="90"
+                      alt="Cars collage"
+                    />
                     <h3>Vehicles</h3>
                   </div>
                 </Link>

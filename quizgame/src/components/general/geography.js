@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { getAnswers } from "../getAnswers";
 import { Link } from "react-router-dom";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { updateScore } from "../../actions";
 
 import winning from "../../sounds/Game-show-winning.mp3";
@@ -30,7 +30,14 @@ const Geography = (props) => {
     soundPlay.volume = 0.1;
   };
 
+  //used the getAnswers function to shuffle the correct and incorrect answers and return them into a new array
   let newAnswers = [];
+  if (props.data.status === "SUCCESS") {
+    newAnswers = getAnswers(
+      props.data.data[index].correct_answer,
+      props.data.data[index].incorrect_answers
+    );
+  }
 
   //function for ask a friend option (showing only the correct answer)
   const askFriend = () => {
@@ -40,6 +47,7 @@ const Geography = (props) => {
       document.getElementById(
         `${props.data.data[index].correct_answer}`
       ).style.background = "green";
+      return elem;
     });
     props.dispatch(updateScore(-50));
   };
@@ -50,13 +58,14 @@ const Geography = (props) => {
     const newArr = [];
     props.data.data[index].incorrect_answers.map((elem) => {
       newArr.push(elem);
+      return newArr;
     });
     document.getElementById(`${newArr[0]}`).style.display = "none";
     document.getElementById(`${newArr[1]}`).style.display = "none";
     props.dispatch(updateScore(-30));
   };
 
-  //function to check if the clicked answer is correct, changing the style and adding sounds  
+  //function to check if the clicked answer is correct, changing the style and adding sounds
   const checkAnswer = (e) => {
     let answer = e.currentTarget.id;
     console.log(answer);
@@ -64,6 +73,7 @@ const Geography = (props) => {
       document.getElementById(`${answer}`).style.background = "green";
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.background = "red";
+        return elem;
       });
       props.dispatch(updateScore(100));
       winningSound.play();
@@ -74,6 +84,7 @@ const Geography = (props) => {
       ).style.background = "green";
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.background = "red";
+        return elem;
       });
       props.dispatch(updateScore(-10));
       wrongAnswerSound.play();
@@ -81,7 +92,7 @@ const Geography = (props) => {
     }
   };
 
-   //function to go to the next question when the button is clicked
+  //function to go to the next question when the button is clicked
   const goToNext = () => {
     audioPlay();
     document.querySelectorAll("button").forEach((elem) => {
@@ -93,7 +104,6 @@ const Geography = (props) => {
       setState({ index: 0 });
     } else setState({ index: state.index + 1 });
   };
-
 
   //switch case for rendering data
   switch (props.data.status) {
@@ -120,11 +130,8 @@ const Geography = (props) => {
                 </Col>
                 <Col lg={7} className="genContainer">
                   {
-                  //map through the array with both correct and incorrect answers and display them randomly
-                    (newAnswers = getAnswers(
-                      props.data.data[index].correct_answer,
-                      props.data.data[index].incorrect_answers
-                    ).map((elem, idx) => (
+                    //map through the array and display the answers
+                    newAnswers.map((elem, idx) => (
                       <button
                         key={idx}
                         id={elem}
@@ -138,7 +145,7 @@ const Geography = (props) => {
                           dangerouslySetInnerHTML={{ __html: elem }}
                         />
                       </button>
-                    )))
+                    ))
                   }
                   {/* button to go to the next question */}
                   <Button onClick={goToNext} className="" id="nextBtn">

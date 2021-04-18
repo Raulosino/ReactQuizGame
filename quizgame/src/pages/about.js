@@ -17,9 +17,8 @@ const About = () => {
       <div className="aboutContainer">
         <h3>Welcome!</h3>
         <p>
-          Choose a category in which to play the Quiz from Celebrities, Films,
-          General Knowledge, Geography, History, Music, Sports, Television and
-          Vehicles.
+          Choose a category to play the Quiz from Celebrities, Films, General
+          Knowledge, Geography, History, Music, Sports, Television and Vehicles.
         </p>
         <p>RULES:</p>
         <ul>

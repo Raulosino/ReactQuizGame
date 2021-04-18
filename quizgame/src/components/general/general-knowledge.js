@@ -28,8 +28,14 @@ const GeneralKnowledge = (props) => {
     soundPlay.play();
     soundPlay.volume = 0.1;
   };
-
   let newAnswers = [];
+  //used the getAnswers function to shuffle the correct and incorrect answers and return them into a new array
+  if (props.data.status === "SUCCESS") {
+    newAnswers = getAnswers(
+      props.data.data[index].correct_answer,
+      props.data.data[index].incorrect_answers
+    );
+  }
 
   //function for ask a friend option (showing only the correct answer)
   const askFriend = () => {
@@ -39,6 +45,7 @@ const GeneralKnowledge = (props) => {
       document.getElementById(
         `${props.data.data[index].correct_answer}`
       ).style.background = "green";
+      return elem;
     });
     props.dispatch(updateScore(-50));
   };
@@ -49,6 +56,7 @@ const GeneralKnowledge = (props) => {
     const newArr = [];
     props.data.data[index].incorrect_answers.map((elem) => {
       newArr.push(elem);
+      return newArr;
     });
     document.getElementById(`${newArr[0]}`).style.display = "none";
     document.getElementById(`${newArr[1]}`).style.display = "none";
@@ -63,6 +71,7 @@ const GeneralKnowledge = (props) => {
       document.getElementById(`${answer}`).style.background = "green";
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.background = "red";
+        return elem;
       });
       props.dispatch(updateScore(100));
       winningSound.play();
@@ -73,6 +82,7 @@ const GeneralKnowledge = (props) => {
       ).style.background = "green";
       props.data.data[index].incorrect_answers.map((elem) => {
         document.getElementById(`${elem}`).style.background = "red";
+        return elem;
       });
       props.dispatch(updateScore(-10));
       wrongAnswerSound.play();
@@ -118,11 +128,8 @@ const GeneralKnowledge = (props) => {
                 </Col>
                 <Col lg={7} className="genContainer">
                   {
-                    //map through the array with both correct and incorrect answers and display them randomly
-                    (newAnswers = getAnswers(
-                      props.data.data[index].correct_answer,
-                      props.data.data[index].incorrect_answers
-                    ).map((elem, idx) => (
+                    //map through the array and display the answers
+                    newAnswers.map((elem, idx) => (
                       <button
                         key={idx}
                         id={elem}
@@ -136,7 +143,7 @@ const GeneralKnowledge = (props) => {
                           dangerouslySetInnerHTML={{ __html: elem }}
                         />
                       </button>
-                    )))
+                    ))
                   }
                   {/* button to go to the next question */}
                   <Button onClick={goToNext} className="" id="nextBtn">
