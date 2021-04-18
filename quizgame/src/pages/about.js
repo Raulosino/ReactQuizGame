@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import click from "../sounds/Mouse_Click_1-fesliyanstudios.com.mp3";
+
 const About = () => {
+  const soundPlay = new Audio(click);
+
+  const audioPlay = () => {
+    soundPlay.play();
+    soundPlay.volume = 0.1;
+  };
   return (
     <div className="aboutBg generalBg">
       <div className="quizImg"></div>
@@ -40,11 +48,13 @@ const About = () => {
           <span>LET'S GET QUIZZICLE!</span>
         </h3>
         <Link to="/general">
-          <button className="playBtn mt-5">Play</button>
+          <button className="playBtn mt-5" onClick={audioPlay}>
+            Play
+          </button>
         </Link>
       </div>
       <Link to="/">
-        <button type="button" className="backBtn">
+        <button type="button" className="backBtn" onClick={audioPlay}>
           Back to home
         </button>
       </Link>
