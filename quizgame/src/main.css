@@ -371,3 +371,6 @@ h1 {
 .heart {
   color: red;
 }
+.disabledBtn {
+  pointer-events: none;
+}
